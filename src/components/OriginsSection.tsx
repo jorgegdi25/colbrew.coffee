@@ -4,13 +4,16 @@ import { Reveal } from "./Reveal";
 import { ArrowRight, MapPin, Leaf, Package, Cherry, Flower2, Citrus, Droplet, Grid2X2, Globe, Sprout, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
+import Link from "next/link";
+
 const origins = [
   {
     image: "/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg",
     location: "Apía, Risaralda",
     badgePosition: "bottom-left",
-    title: "Apía Reserve™",
+    title: "Apía, Risaralda",
     description: "Cultivado en las montañas de Apía por familias cafeteras que combinan tradición, dedicación y amor por su tierra.",
+    link: "/apia",
     notes: [
       { icon: Leaf, label: "Cacao" },
       { icon: Package, label: "Panela" },
@@ -21,8 +24,9 @@ const origins = [
     image: "/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg",
     location: "Jardín, Antioquia",
     badgePosition: "top-left",
-    title: "Jardín Heritage™",
+    title: "Jardín, Antioquia",
     description: "Cafés de alturas cultivados en el suroeste antioqueño, con perfiles únicos y un carácter inolvidable.",
+    link: "/jardin",
     notes: [
       { icon: Flower2, label: "Florales" },
       { icon: Citrus, label: "Cítricos" },
@@ -33,8 +37,9 @@ const origins = [
     image: "/closeup-shot-male-hand-picking-cherry-red-coffee-beans-tree.jpg",
     location: "Ciudad Bolívar, Antioquia",
     badgePosition: "top-left",
-    title: "Ciudad Bolívar™",
+    title: "Ciudad Bolívar, Antioquia",
     description: "Región reconocida por su biodiversidad y microclimas ideales para producir cafés excepcionales.",
+    link: "/ciudad-bolivar",
     notes: [
       { icon: Grid2X2, label: "Chocolate" },
       { icon: Citrus, label: "Frutas maduras" },
@@ -45,8 +50,9 @@ const origins = [
     image: "/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg",
     location: "Balboa, Cauca",
     badgePosition: "bottom-left",
-    title: "Balboa Reserve™",
+    title: "Balboa, Cauca",
     description: "Cultivado en las fértiles tierras del Cauca, ofreciendo una taza perfectamente balanceada y de gran cuerpo.",
+    link: "/comunidad",
     notes: [
       { icon: Droplet, label: "Panela" },
       { icon: Cherry, label: "Mora" },
@@ -175,7 +181,7 @@ export function OriginsSection() {
                 className="snap-start flex-none w-[85vw] sm:w-[400px] lg:w-[calc(33.333%-1.5rem)]"
               >
                 <Reveal delay={0.2 + (index * 0.1)}>
-                  <div className="bg-[#F8F7F2] rounded-2xl overflow-hidden border border-[#EBE7DD] hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+                  <Link href={origin.link} className="bg-[#F8F7F2] rounded-2xl overflow-hidden border border-[#EBE7DD] hover:shadow-xl transition-shadow duration-300 h-full flex flex-col group cursor-pointer">
                     
                     {/* Card Image */}
                     <div className="relative h-[250px] w-full p-4 pb-0">
@@ -183,18 +189,18 @@ export function OriginsSection() {
                         <img 
                           src={origin.image} 
                           alt={origin.title} 
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className={`absolute ${origin.badgePosition === 'top-left' ? 'top-3 left-3' : 'bottom-3 left-3'} bg-[#1a281d]/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
                           <MapPin size={12} />
-                          <span className="font-inter text-[12px] font-medium">{origin.location}</span>
+                          <span className="font-inter text-[12px] font-medium">Colombia</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Card Content */}
                     <div className="p-8 flex-grow flex flex-col">
-                      <h3 className="font-montserrat text-[26px] font-bold text-[#1a281d] mb-3 tracking-tight">
+                      <h3 className="font-montserrat text-[26px] font-bold text-[#1a281d] mb-3 tracking-tight group-hover:text-[#b4843b] transition-colors">
                         {origin.title}
                       </h3>
                       <p className="font-inter text-[15px] text-[#4a4a4a] leading-relaxed mb-8 flex-grow">
@@ -215,12 +221,12 @@ export function OriginsSection() {
                         </div>
                       </div>
 
-                      <button className="flex items-center gap-2 font-inter font-bold text-[#1a281d] hover:text-[#b4843b] transition-colors group mt-auto w-fit border-b border-[#1a281d] pb-1 hover:border-[#b4843b]">
+                      <div className="flex items-center gap-2 font-inter font-bold text-[#1a281d] transition-colors mt-auto w-fit border-b border-[#1a281d] pb-1 group-hover:text-[#b4843b] group-hover:border-[#b4843b]">
                         Explorar este origen
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </Reveal>
               </div>
             ))}

@@ -1,16 +1,17 @@
 import { TopNavBar } from "@/components/TopNavBar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import { CtaSection } from "@/components/CtaSection";
 import { Coffee, MapPin, Sprout } from "lucide-react";
+import { CtaSection } from "@/components/CtaSection";
 
 export default function NuestroOrigenPage() {
   return (
-    <>
+    <div className="bg-[#FDFBF7] min-h-screen font-inter text-[#4a4a4a]">
       <TopNavBar />
-      <main className="bg-[#F8F7F2] min-h-screen">
+      
+      <main>
         
-        {/* Section 1: Hero */}
+        {/* SECCIÓN 1: HERO (Restaurado al diseño original) */}
         <section className="relative w-full h-[380px] md:h-[450px] flex items-center">
           <div className="absolute inset-0">
              <img 
@@ -35,104 +36,96 @@ export default function NuestroOrigenPage() {
           </div>
         </section>
 
-        {/* Section 2: Qué es COLBREW */}
-        <section className="py-24 md:py-32">
+        {/* SECCIÓN 2: ¿Qué es COLBREW? */}
+        <section className="bg-[#F8F7F2] py-24">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16">
-            <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
-              <div className="w-full md:w-1/2">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="w-full lg:w-1/2 order-2 lg:order-1 h-[400px] lg:h-[500px]">
                 <Reveal>
-                  <h2 className="font-montserrat text-[36px] md:text-[48px] font-bold text-[#1a281d] mb-6 tracking-tight">
-                    ¿Qué es COLBREW?
-                  </h2>
-                  <div className="w-16 h-[3px] bg-[#b4843b] mb-10"></div>
-                  
-                  <div className="space-y-6 font-inter text-[16px] md:text-[18px] text-[#4a4a4a] leading-relaxed">
-                    <p>
-                      COLBREW nace para conectar cafés especiales colombianos con personas que buscan algo más que una bebida.
-                    </p>
-                    <p>
-                      Trabajamos junto a comunidades cafeteras comprometidas con la calidad, el origen y el desarrollo de sus territorios.
-                    </p>
-                    <p>
-                      Cada café tiene una historia, una región y una comunidad detrás.
-                    </p>
-                  </div>
+                  <img 
+                    src="/low-angle-view-coffee-farm-hill-against-sky.jpg" 
+                    alt="Cultivo de café" 
+                    className="w-full h-full object-cover rounded-sm"
+                  />
                 </Reveal>
               </div>
-              
-              <div className="w-full md:w-1/2">
+              <div className="w-full lg:w-1/2 order-1 lg:order-2">
                 <Reveal delay={0.2}>
-                  <img 
-                    src="/closeup-shot-male-hand-picking-cherry-red-coffee-beans-tree.jpg" 
-                    alt="Manos con granos de café" 
-                    className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-xl"
-                  />
+                  <h2 className="font-montserrat text-4xl lg:text-5xl font-bold text-[#1a281d] mb-8">
+                    ¿Qué es COLBREW?
+                  </h2>
+                  <div className="space-y-6 text-lg leading-relaxed">
+                    <p>
+                      COLBREW nace para conectar cafés especiales colombianos con consumidores que buscan algo más que una bebida.
+                    </p>
+                    <p>
+                      Trabajamos junto a comunidades cafeteras para compartir historias, territorios y cafés con identidad propia.
+                    </p>
+                    <p>
+                      Cada origen representa una región, una cultura y una comunidad.
+                    </p>
+                  </div>
                 </Reveal>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Section 3: Qué encontrarás aquí */}
-        <section className="py-24 pb-32 bg-[#F8F7F2]">
+        {/* SECCIÓN 3: ¿Qué encontrarás aquí? (Limpio, sin tarjetas pesadas) */}
+        <section className="py-24 bg-[#FDFBF7]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 text-center">
             <Reveal>
-              <h2 className="font-montserrat text-[32px] md:text-[40px] font-bold text-[#1a281d] mb-6 tracking-tight">
+              <h2 className="font-montserrat text-3xl font-bold text-[#1a281d] mb-16">
                 ¿Qué encontrarás aquí?
               </h2>
-              <div className="w-16 h-[3px] bg-[#b4843b] mx-auto mb-20"></div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 relative">
-              {/* Vertical separators for desktop */}
-              <div className="hidden md:block absolute top-[10%] bottom-[10%] left-[33.33%] w-[1px] bg-[#EBE7DD]"></div>
-              <div className="hidden md:block absolute top-[10%] bottom-[10%] left-[66.66%] w-[1px] bg-[#EBE7DD]"></div>
-
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
               <Reveal delay={0.1}>
-                <div className="flex flex-col items-center px-6">
-                  <Coffee size={48} className="text-[#b4843b] mb-8" strokeWidth={1.5} />
-                  <h3 className="font-montserrat text-[22px] font-bold text-[#1a281d] mb-4 leading-snug">
-                    Cafés de origen <br /> colombiano
+                <div className="flex flex-col items-center">
+                  <Coffee size={32} className="text-[#b4843b] mb-6" strokeWidth={1.5} />
+                  <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-3">
+                    Cafés de origen colombiano
                   </h3>
-                  <p className="font-inter text-[#4a4a4a] leading-relaxed text-[15px]">
-                    Descubre cafés especiales seleccionados en distintas regiones del país.
+                  <p className="text-base leading-relaxed text-[#4a4a4a] max-w-xs">
+                    Descubre cafés seleccionados de distintas regiones cafeteras.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.2}>
-                <div className="flex flex-col items-center px-6">
-                  <MapPin size={48} className="text-[#b4843b] mb-8" strokeWidth={1.5} />
-                  <h3 className="font-montserrat text-[22px] font-bold text-[#1a281d] mb-4 leading-snug">
-                    Trazabilidad <br /> y origen
+                <div className="flex flex-col items-center">
+                  <MapPin size={32} className="text-[#b4843b] mb-6" strokeWidth={1.5} />
+                  <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-3">
+                    Territorios y comunidades
                   </h3>
-                  <p className="font-inter text-[#4a4a4a] leading-relaxed text-[15px]">
-                    Conoce de dónde viene cada café y las comunidades que lo hacen posible.
+                  <p className="text-base leading-relaxed text-[#4a4a4a] max-w-xs">
+                    Conoce los municipios, paisajes y personas detrás de cada origen.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.3}>
-                <div className="flex flex-col items-center px-6">
-                  <Sprout size={48} className="text-[#b4843b] mb-8" strokeWidth={1.5} />
-                  <h3 className="font-montserrat text-[22px] font-bold text-[#1a281d] mb-4 leading-snug">
-                    Impacto <br /> positivo
+                <div className="flex flex-col items-center">
+                  <Sprout size={32} className="text-[#b4843b] mb-6" strokeWidth={1.5} />
+                  <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-3">
+                    Impacto positivo
                   </h3>
-                  <p className="font-inter text-[#4a4a4a] leading-relaxed text-[15px]">
-                    Aprende cómo cada origen contribuye al desarrollo de su territorio.
+                  <p className="text-base leading-relaxed text-[#4a4a4a] max-w-xs">
+                    Historias que muestran cómo el café genera oportunidades en las comunidades.
                   </p>
                 </div>
               </Reveal>
-
             </div>
           </div>
         </section>
 
-        {/* Cta Section */}
+        {/* SECCIÓN 4: CTA FINAL */}
         <CtaSection />
 
       </main>
+      
       <Footer />
-    </>
+    </div>
   );
 }
