@@ -46,7 +46,7 @@ export function TopNavBar() {
               { label: "Inicio", href: "/" },
               { label: "Nuestro Origen", href: "/nuestro-origen" },
               { label: "Comunidad", href: "/comunidad" },
-              { label: "Historias", href: "#" },
+              { label: "Historias", href: "/historias" },
               { label: "Contacto", href: "#" },
             ].map((item) => {
               const isActive = pathname === item.href;
