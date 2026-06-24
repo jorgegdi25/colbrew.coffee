@@ -1,10 +1,17 @@
-"use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jardín | COLBREW™ - Café Especial Colombiano",
+  description: "Descubre el café especial de Jardín, Antioquia. Un territorio donde la tradición cafetera se encuentra con la preservación del patrimonio y la cultura.",
+};
+
 
 export default function JardinPage() {
   return (

@@ -5,6 +5,14 @@ import { Reveal } from "@/components/Reveal";
 import { Coffee, MapPin, Sprout, Music, Users } from "lucide-react";
 import { CtaSection } from "@/components/CtaSection";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nuestro Origen | La Historia de COLBREW™",
+  description: "Conoce la historia detrás de COLBREW, cómo nace nuestro compromiso social y por qué elegimos los mejores cafés de especialidad de Colombia.",
+};
+
+
 export default function NuestroOrigenPage() {
   return (
     <div className="bg-[#FDFBF7] min-h-screen font-inter text-[#4a4a4a]">

@@ -1,4 +1,3 @@
-"use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
 import Image from "next/image";
@@ -8,6 +7,14 @@ import { CtaSection } from "@/components/CtaSection";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Comunidad y Territorio | COLBREW™",
+  description: "Más allá de una taza de café, COLBREW apoya iniciativas educativas, culturales y musicales en las regiones productoras de Colombia.",
+};
+
 
 export default function ComunidadPage() {
   const carouselRef = useRef<HTMLDivElement>(null);

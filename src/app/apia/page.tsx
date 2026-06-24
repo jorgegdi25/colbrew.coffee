@@ -1,10 +1,17 @@
-"use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Apía | COLBREW™ - Territorio, Música y Futuro",
+  description: "Conoce nuestro café de Apía, Risaralda. Una comunidad unida por el amor a la tierra, el café de altura y las escuelas de música.",
+};
+
 
 export default function ApiaPage() {
   return (

@@ -1,10 +1,17 @@
-"use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ciudad Bolívar | COLBREW™ - Corazón Cafetero",
+  description: "Explora Ciudad Bolívar, en el Suroeste Antioqueño. Familias productoras, montañas cafeteras y un compromiso firme con el progreso de las nuevas generaciones.",
+};
+
 
 export default function CiudadBolivarPage() {
   return (

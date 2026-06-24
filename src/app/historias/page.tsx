@@ -6,6 +6,14 @@ import { CtaSection } from "@/components/CtaSection";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Historias | COLBREW™",
+  description: "Lee las historias de las familias caficultoras, los músicos jóvenes y el impacto real que construimos juntos en Colombia.",
+};
+
+
 // Fetch posts from Sanity
 async function getPosts() {
   const query = `*[_type == "post"] | order(publishedAt desc) {

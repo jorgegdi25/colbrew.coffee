@@ -48,15 +48,16 @@ export function HeroSection() {
       <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-8 pb-12 md:py-24">
         <div className="w-full md:w-[45%] pr-0 md:pr-8">
           <Reveal>
-            <h1 className="font-montserrat text-[48px] sm:text-[56px] md:text-[76px] font-extrabold leading-[1] text-white md:text-[#1a281d] mb-2 tracking-tight drop-shadow-md md:drop-shadow-none">
+            <span className="block font-montserrat text-[48px] sm:text-[56px] md:text-[76px] font-extrabold leading-[1] text-white md:text-[#1a281d] mb-2 tracking-tight drop-shadow-md md:drop-shadow-none">
               COLBREW<span className="text-[24px] sm:text-[32px] md:text-[40px] align-top font-bold">™</span>
-            </h1>
+            </span>
           </Reveal>
           
           <Reveal delay={0.1}>
-            <p className="font-montserrat text-[32px] sm:text-[36px] md:text-[50px] font-bold text-white md:text-[#1a281d] leading-[1.1] mb-6 md:mb-8 drop-shadow-md md:drop-shadow-none">
+            <h1 className="font-montserrat text-[32px] sm:text-[36px] md:text-[50px] font-bold text-white md:text-[#1a281d] leading-[1.1] mb-6 md:mb-8 drop-shadow-md md:drop-shadow-none">
+              <span className="sr-only">Café Especial Colombiano. </span>
               Más que café: territorio, música y <span className="text-[#d4a860] md:text-[#b4843b] font-medium">futuro.</span>
-            </p>
+            </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
