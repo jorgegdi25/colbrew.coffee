@@ -38,7 +38,7 @@ export default async function HistoriasPage() {
       
       <main>
         {/* HERO */}
-        <section className="relative w-full min-h-[450px] md:min-h-[550px] flex items-center pt-24 md:pt-32 pb-12">
+        <section className="relative w-full min-h-[450px] md:min-h-[550px] flex flex-col justify-center pt-32 md:pt-40 pb-16 mt-[80px] md:mt-0">
           <div className="absolute inset-0">
              <img 
                src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
