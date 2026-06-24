@@ -38,7 +38,7 @@ export default async function HistoriasPage() {
       
       <main>
         {/* HERO */}
-        <section className="relative w-full">
+        <section className="relative w-full min-h-[600px] flex items-center">
           <div className="absolute inset-0">
              <img 
                src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.webp" 
@@ -47,10 +47,7 @@ export default async function HistoriasPage() {
              />
              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
           </div>
-          <div 
-            className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 w-full"
-            style={{ paddingTop: '180px', paddingBottom: '120px' }}
-          >
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 w-full py-20">
             <div className="max-w-2xl">
               <Reveal>
                 <h1 className="font-montserrat text-[48px] md:text-[72px] font-bold text-white leading-[1.1] mb-6">
