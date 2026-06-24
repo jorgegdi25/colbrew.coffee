@@ -21,7 +21,7 @@ export default function NuestroOrigenPage() {
       <main>
         
         {/* SECCIÓN 1: HERO (Restaurado al diseño original) */}
-        <section className="relative w-full h-[380px] md:h-[450px] flex items-center">
+        <section className="relative w-full min-h-[450px] md:min-h-[550px] flex items-center pt-24 md:pt-32 pb-12">
           <div className="absolute inset-0">
              <Image src="/brand-4.png" alt="Caficultor" fill className="object-cover" />
              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>

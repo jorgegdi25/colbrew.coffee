@@ -38,7 +38,7 @@ export default function ComunidadPage() {
       <main>
         
         {/* HERO */}
-        <section className="relative w-full h-[380px] md:h-[450px] flex items-center">
+        <section className="relative w-full min-h-[450px] md:min-h-[550px] flex items-center pt-24 md:pt-32 pb-12">
           <div className="absolute inset-0">
              <Image src="/brand-6.png" alt="Mujer recolectora de café" fill className="object-cover" />
              <div className="absolute inset-0 bg-black/40"></div>
