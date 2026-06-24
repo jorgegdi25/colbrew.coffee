@@ -55,7 +55,7 @@ export default function ApiaPage() {
             </div>
             {/* Right: Image — slightly wider to break symmetry */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <Image src="/paisaje-apia.png" alt="Paisaje cafetero de Apía, Risaralda" fill className="object-cover" />
+              <Image src="/paisaje-apia.webp" alt="Paisaje cafetero de Apía, Risaralda" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -110,7 +110,7 @@ export default function ApiaPage() {
             
             <Reveal delay={0.2}>
               <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
-                <Image src="/mapa-apia.png" alt="Mapa de ubicación de Apía en Risaralda" width={800} height={800} className="w-full h-auto object-cover" />
+                <Image src="/mapa-apia.webp" alt="Mapa de ubicación de Apía en Risaralda" width={800} height={800} className="w-full h-auto object-cover" />
               </div>
             </Reveal>
           </div>
@@ -118,7 +118,7 @@ export default function ApiaPage() {
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <Image src="/apia-1.png" alt="Cerezas de café madurando en Apía" fill className="object-cover" />
+          <Image src="/apia-1.webp" alt="Cerezas de café madurando en Apía" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad — Asymmetric layout */}
@@ -128,7 +128,7 @@ export default function ApiaPage() {
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/apia-2.png" alt="Caficultora en Apía" fill className="object-cover" />
+                  <Image src="/apia-2.webp" alt="Caficultora en Apía" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
@@ -164,7 +164,7 @@ export default function ApiaPage() {
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/apia-3.png" alt="Expresiones culturales de Apía" fill className="object-cover" />
+                  <Image src="/apia-3.webp" alt="Expresiones culturales de Apía" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
@@ -223,7 +223,7 @@ export default function ApiaPage() {
               {/* Image on the right */}
               <div className="w-full md:w-[55%]">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/apia-4.png" alt="Naturaleza de Apía y el Cerro Tatamá" fill className="object-cover" />
+                  <Image src="/apia-4.webp" alt="Naturaleza de Apía y el Cerro Tatamá" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function ApiaPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/apia-5.png')" }}
+          style={{ backgroundImage: "url('/apia-5.webp')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">

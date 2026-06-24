@@ -23,7 +23,7 @@ export default function NuestroOrigenPage() {
         {/* SECCIÓN 1: HERO (Restaurado al diseño original) */}
         <section className="relative w-full">
           <div className="absolute inset-0">
-             <Image src="/brand-4.png" alt="Caficultor" fill className="object-cover" />
+             <Image src="/brand-4.webp" alt="Caficultor" fill className="object-cover" />
              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
           </div>
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 w-full pt-28 pb-20 md:pt-40 md:pb-32">
@@ -47,7 +47,7 @@ export default function NuestroOrigenPage() {
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="w-full lg:w-1/2 order-2 lg:order-1 h-[400px] lg:h-[500px]">
                 <Reveal>
-                  <Image src="/brand-5.png" alt="Cultivo de café" fill className="object-cover rounded-sm" />
+                  <Image src="/brand-5.webp" alt="Cultivo de café" fill className="object-cover rounded-sm" />
                 </Reveal>
               </div>
               <div className="w-full lg:w-1/2 order-1 lg:order-2">

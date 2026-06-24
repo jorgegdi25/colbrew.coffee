@@ -28,7 +28,7 @@ export function CtaSection({
       {/* Fondo fotográfico con opacidad súper baja */}
       <div className="absolute inset-0">
         <img 
-          src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
+          src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.webp" 
           alt="Cerezas de café en la rama" 
           className="w-full h-full object-cover opacity-20"
         />

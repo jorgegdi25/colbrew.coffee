@@ -3,19 +3,19 @@ import { Reveal } from "./Reveal";
 
 const articles = [
   {
-    image: "/low-angle-view-coffee-farm-hill-against-sky.jpg",
+    image: "/low-angle-view-coffee-farm-hill-against-sky.webp",
     badge: "Café Colombiano",
     title: "¿Qué hace especial al café colombiano?",
     excerpt: "Descubre las características únicas que hacen del café de Colombia uno de los mejores del mundo.",
   },
   {
-    image: "/hands-holding-coffee-beans.jpg",
+    image: "/hands-holding-coffee-beans.webp",
     badge: "Preparación",
     title: "Cómo preparar un buen café frío en casa",
     excerpt: "Consejos y técnicas para disfrutar un cold brew delicioso y refrescante.",
   },
   {
-    image: "/adult-woman-picking-coffee-from-plantations.jpg",
+    image: "/adult-woman-picking-coffee-from-plantations.webp",
     badge: "Historias",
     title: "El origen detrás de cada taza",
     excerpt: "Historias reales de familias cafeteras que trabajan con pasión y dedicación.",

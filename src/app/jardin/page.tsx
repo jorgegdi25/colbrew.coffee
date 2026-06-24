@@ -55,7 +55,7 @@ export default function JardinPage() {
             </div>
             {/* Right: Image — slightly wider to break symmetry */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <Image src="/jardin-1.png" alt="Paisaje cafetero de Jardín, Antioquia" fill className="object-cover" />
+              <Image src="/jardin-1.webp" alt="Paisaje cafetero de Jardín, Antioquia" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -110,7 +110,7 @@ export default function JardinPage() {
             
             <Reveal delay={0.2}>
               <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
-                <Image src="/mapa-jardin.png" alt="Mapa de ubicación de Jardín en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
+                <Image src="/mapa-jardin.webp" alt="Mapa de ubicación de Jardín en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
               </div>
             </Reveal>
           </div>
@@ -118,7 +118,7 @@ export default function JardinPage() {
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <Image src="/jardin-2.png" alt="Cerezas de café en las montañas de Jardín" fill className="object-cover" />
+          <Image src="/jardin-2.webp" alt="Cerezas de café en las montañas de Jardín" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad — Asymmetric layout */}
@@ -128,7 +128,7 @@ export default function JardinPage() {
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/jardin-3.png" alt="Caficultora en Jardín" fill className="object-cover" />
+                  <Image src="/jardin-3.webp" alt="Caficultora en Jardín" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
@@ -164,7 +164,7 @@ export default function JardinPage() {
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/jardin-4.png" alt="Tradición cafetera de Jardín" fill className="object-cover" />
+                  <Image src="/jardin-4.webp" alt="Tradición cafetera de Jardín" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
@@ -222,7 +222,7 @@ export default function JardinPage() {
               {/* Image on the right */}
               <div className="w-full md:w-[55%]">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/jardin-5.png" alt="Paisajes montañosos de Jardín" fill className="object-cover" />
+                  <Image src="/jardin-5.webp" alt="Paisajes montañosos de Jardín" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function JardinPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/jardin-6.png')" }}
+          style={{ backgroundImage: "url('/jardin-6.webp')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">

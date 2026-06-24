@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const origins = [
   {
-    image: "/apia-1.png",
+    image: "/apia-1.webp",
     location: "Apía, Risaralda",
     badgePosition: "bottom-left",
     title: "Apía, Risaralda",
@@ -22,7 +22,7 @@ const origins = [
     ]
   },
   {
-    image: "/jardin-1.png",
+    image: "/jardin-1.webp",
     location: "Jardín, Antioquia",
     badgePosition: "top-left",
     title: "Jardín, Antioquia",
@@ -35,7 +35,7 @@ const origins = [
     ]
   },
   {
-    image: "/ciudad-bolivar.png",
+    image: "/ciudad-bolivar.webp",
     location: "Ciudad Bolívar, Antioquia",
     badgePosition: "top-left",
     title: "Ciudad Bolívar, Antioquia",

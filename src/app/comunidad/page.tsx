@@ -32,7 +32,7 @@ export default function ComunidadPage() {
         {/* HERO */}
         <section className="relative w-full">
           <div className="absolute inset-0">
-             <Image src="/brand-6.png" alt="Mujer recolectora de café" fill className="object-cover" />
+             <Image src="/brand-6.webp" alt="Mujer recolectora de café" fill className="object-cover" />
              <div className="absolute inset-0 bg-black/40"></div>
           </div>
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 w-full pt-28 pb-20 md:pt-40 md:pb-32">
@@ -97,7 +97,7 @@ export default function ComunidadPage() {
               {/* Bloque 1 */}
               <Link href="/apia" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
                 <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
-                  <Image src="/apia-1.png" alt="Apía" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="/apia-1.webp" alt="Apía" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
                   📍 Apía, Risaralda
@@ -111,7 +111,7 @@ export default function ComunidadPage() {
               {/* Bloque 2 */}
               <Link href="/jardin" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
                 <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
-                  <Image src="/jardin-1.png" alt="Jardín" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="/jardin-1.webp" alt="Jardín" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
                   📍 Jardín, Antioquia
@@ -125,7 +125,7 @@ export default function ComunidadPage() {
               {/* Bloque 3 */}
               <Link href="/ciudad-bolivar" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
                 <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
-                  <Image src="/ciudad-bolivar.png" alt="Ciudad Bolívar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="/ciudad-bolivar.webp" alt="Ciudad Bolívar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
                   📍 Ciudad Bolívar, Antioquia
@@ -142,7 +142,7 @@ export default function ComunidadPage() {
         {/* SECCIÓN 3: Cita / Manifiesto (Reemplaza a Historias) */}
         <section 
           className="relative py-20 md:py-24 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/musica-1.png')" }}
+          style={{ backgroundImage: "url('/musica-1.webp')" }}
         >
           {/* Overlay oscuro pero transparente para que se aprecie la imagen */}
           <div className="absolute inset-0 bg-black/40"></div>

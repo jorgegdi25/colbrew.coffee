@@ -55,7 +55,7 @@ export default function CiudadBolivarPage() {
             </div>
             {/* Right: Image */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <Image src="/ciudad-bolivar.png" alt="Paisaje cafetero de Ciudad Bolívar, Antioquia" fill className="object-cover" />
+              <Image src="/ciudad-bolivar.webp" alt="Paisaje cafetero de Ciudad Bolívar, Antioquia" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -109,7 +109,7 @@ export default function CiudadBolivarPage() {
             
             <Reveal delay={0.2}>
               <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
-                <Image src="/mapa-ciudad-bolivar.png" alt="Mapa de ubicación de Ciudad Bolívar en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
+                <Image src="/mapa-ciudad-bolivar.webp" alt="Mapa de ubicación de Ciudad Bolívar en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
               </div>
             </Reveal>
           </div>
@@ -117,7 +117,7 @@ export default function CiudadBolivarPage() {
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <Image src="/ciudad-bolivar-2.png" alt="Cerezas de café en Ciudad Bolívar" fill className="object-cover" />
+          <Image src="/ciudad-bolivar-2.webp" alt="Cerezas de café en Ciudad Bolívar" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad */}
@@ -126,7 +126,7 @@ export default function CiudadBolivarPage() {
             <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/ciudad-bolivar-3.png" alt="Caficultora en Ciudad Bolívar" fill className="object-cover" />
+                  <Image src="/ciudad-bolivar-3.webp" alt="Caficultora en Ciudad Bolívar" fill className="object-cover" />
                 </div>
               </div>
               <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
@@ -161,7 +161,7 @@ export default function CiudadBolivarPage() {
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/ciudad-bolivar-4.png" alt="Tradición cafetera de Ciudad Bolívar" fill className="object-cover" />
+                  <Image src="/ciudad-bolivar-4.webp" alt="Tradición cafetera de Ciudad Bolívar" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
@@ -217,7 +217,7 @@ export default function CiudadBolivarPage() {
               </div>
               <div className="w-full md:w-[55%]">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <Image src="/ciudad-bolivar-5.png" alt="Montañas de Ciudad Bolívar" fill className="object-cover" />
+                  <Image src="/ciudad-bolivar-5.webp" alt="Montañas de Ciudad Bolívar" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function CiudadBolivarPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/ciudad-bolivar-2.png')" }}
+          style={{ backgroundImage: "url('/ciudad-bolivar-2.webp')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">

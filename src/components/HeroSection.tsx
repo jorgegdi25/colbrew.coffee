@@ -6,9 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const heroImages = [
-  "/brand-1.png",
-  "/brand-2.png",
-  "/brand-3.png"
+  "/brand-1.webp",
+  "/brand-2.webp",
+  "/brand-3.webp"
 ];
 
 export function HeroSection() {

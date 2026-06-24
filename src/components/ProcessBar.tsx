@@ -66,7 +66,7 @@ export function ProcessBar() {
       <div className="absolute inset-0 z-0">
         <img
           alt="Paisaje de montañas cafeteras"
-          src="/scenic-view-agricultural-field-against-sky.jpg"
+          src="/scenic-view-agricultural-field-against-sky.webp"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-[#1a281d]/85" />
