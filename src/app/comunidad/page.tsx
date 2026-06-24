@@ -96,7 +96,7 @@ export default function ComunidadPage() {
 
               {/* Bloque 1 */}
               <Link href="/apia" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
-                <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
+                <div className="relative w-full h-[320px] overflow-hidden rounded-sm mb-6">
                   <Image src="/apia-1.webp" alt="Apía" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
@@ -110,7 +110,7 @@ export default function ComunidadPage() {
 
               {/* Bloque 2 */}
               <Link href="/jardin" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
-                <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
+                <div className="relative w-full h-[320px] overflow-hidden rounded-sm mb-6">
                   <Image src="/jardin-1.webp" alt="Jardín" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
@@ -124,7 +124,7 @@ export default function ComunidadPage() {
 
               {/* Bloque 3 */}
               <Link href="/ciudad-bolivar" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
-                <div className="w-full h-[320px] overflow-hidden rounded-sm mb-6">
+                <div className="relative w-full h-[320px] overflow-hidden rounded-sm mb-6">
                   <Image src="/ciudad-bolivar.webp" alt="Ciudad Bolívar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
                 <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">

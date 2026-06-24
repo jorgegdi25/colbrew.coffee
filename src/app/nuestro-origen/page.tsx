@@ -46,7 +46,7 @@ export default function NuestroOrigenPage() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16">
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
               <div className="w-full lg:w-1/2 order-2 lg:order-1 h-[400px] lg:h-[500px]">
-                <Reveal>
+                <Reveal className="relative w-full h-full">
                   <Image src="/brand-5.webp" alt="Cultivo de café" fill className="object-cover rounded-sm" />
                 </Reveal>
               </div>
