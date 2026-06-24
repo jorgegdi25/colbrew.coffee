@@ -2,11 +2,13 @@
 
 import { Reveal } from "./Reveal";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const heroImages = [
-  "/closeup-shot-male-hand-picking-cherry-red-coffee-beans-tree.jpg",
-  "/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg",
-  "/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg"
+  "/brand-1.png",
+  "/brand-2.png",
+  "/brand-3.png"
 ];
 
 export function HeroSection() {
@@ -27,13 +29,15 @@ export function HeroSection() {
         className="absolute inset-0 md:inset-auto md:right-0 md:top-0 h-full w-full md:w-[58%] z-0 md:rounded-tr-none md:rounded-l-[100vw] overflow-hidden"
       >
         {heroImages.map((src, index) => (
-          <img
+          <Image
             key={src}
             alt={`Paisaje cafetero colombiano ${index + 1}`}
-            className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-[1500ms] ${
+            className={`object-cover transition-opacity duration-[1500ms] ${
               index === currentImg ? "opacity-100" : "opacity-0"
             }`}
             src={src}
+            fill
+            priority={index === 0}
           />
         ))}
         {/* Dark overlay ONLY on mobile to ensure text legibility */}
@@ -51,24 +55,30 @@ export function HeroSection() {
           
           <Reveal delay={0.1}>
             <p className="font-montserrat text-[32px] sm:text-[36px] md:text-[50px] font-bold text-white md:text-[#1a281d] leading-[1.1] mb-6 md:mb-8 drop-shadow-md md:drop-shadow-none">
-              Del grano al <span className="text-[#d4a860] md:text-[#b4843b] font-medium">impacto.</span>
+              Más que café: territorio, música y <span className="text-[#d4a860] md:text-[#b4843b] font-medium">futuro.</span>
             </p>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="font-inter text-[16px] md:text-[18px] text-gray-100 md:text-[#4a4a4a] max-w-[420px] mb-8 md:mb-10 leading-relaxed font-medium drop-shadow-sm md:drop-shadow-none">
-              Conectamos comunidades cafeteras colombianas con consumidores, productores y aliados que creen en el origen, la cultura y la sostenibilidad.
+              Conectamos cafés especiales colombianos con iniciativas culturales y educativas que generan oportunidades para nuevas generaciones en las regiones donde nace nuestro café.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#b4843b] md:bg-[#1a281d] text-white px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] hover:bg-[#9a6f30] md:hover:bg-[#2c3d31] transition-colors shadow-lg md:shadow-sm w-full sm:w-auto">
-                Conoce Nuestro Origen
-              </button>
-              <button className="bg-transparent text-white md:text-[#1a281d] px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] border border-white md:border-[#d1cdc2] hover:bg-white/10 md:hover:bg-transparent md:hover:border-[#1a281d] transition-colors w-full sm:w-auto text-center">
-                Únete a la Comunidad
-              </button>
+              <Link 
+                href="/nuestro-origen"
+                className="bg-[#b4843b] md:bg-[#1a281d] text-white px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] hover:bg-[#9a6f30] md:hover:bg-[#2c3d31] transition-colors shadow-lg md:shadow-sm w-full sm:w-auto text-center cursor-pointer"
+              >
+                Conoce nuestra historia
+              </Link>
+              <Link 
+                href="#origenes-section"
+                className="bg-transparent text-white md:text-[#1a281d] px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] border border-white md:border-[#d1cdc2] hover:bg-white/10 md:hover:bg-transparent md:hover:border-[#1a281d] transition-colors w-full sm:w-auto text-center cursor-pointer"
+              >
+                Explorar orígenes
+              </Link>
             </div>
           </Reveal>
         </div>

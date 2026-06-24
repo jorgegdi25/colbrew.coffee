@@ -2,8 +2,27 @@
 
 import { Reveal } from "./Reveal";
 import { Sprout, Mail, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-export function CtaSection() {
+interface CtaSectionProps {
+  title?: React.ReactNode;
+  description?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  primaryButtonLink?: string;
+}
+
+export function CtaSection({
+  title = (
+    <>
+      Cada taza puede <br className="hidden sm:block" /> generar <span className="text-[#b4843b]">oportunidades</span>
+    </>
+  ),
+  description = "Detrás de cada origen existen comunidades, jóvenes, iniciativas culturales y familias cafeteras que construyen el futuro de sus territorios. COLBREW™ busca conectar esas historias con personas que creen en el poder transformador del café colombiano.",
+  primaryButtonText = "Explorar Orígenes",
+  secondaryButtonText = "Solicitar Información",
+  primaryButtonLink = "/historias"
+}: CtaSectionProps) {
   return (
     <section className="relative py-32 bg-[#1a281d] flex items-center justify-center overflow-hidden">
       {/* Fondo fotográfico con opacidad súper baja */}
@@ -23,31 +42,39 @@ export function CtaSection() {
             </div>
           </div>
         </Reveal>
-
+ 
         <Reveal delay={0.1}>
           <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Cada café cuenta <br className="hidden sm:block" /> una <span className="text-[#b4843b]">historia</span>
+            {title}
           </h2>
         </Reveal>
-
+ 
         <Reveal delay={0.2}>
           <p className="font-inter text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Detrás de cada origen hay familias cafeteras, comunidades y proyectos culturales que transforman vidas. Explora nuestros cafés de origen colombiano y sé parte de este impacto positivo.
+            {description}
           </p>
         </Reveal>
-
+ 
         <Reveal delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#b4843b] text-white px-8 py-4 rounded-sm font-inter font-bold hover:bg-white hover:text-[#1a281d] transition-colors group">
+            <Link 
+              href={primaryButtonLink}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#b4843b] text-white px-8 py-4 rounded-sm font-inter font-bold hover:bg-white hover:text-[#1a281d] transition-colors group cursor-pointer text-center"
+            >
               <Sprout size={18} />
-              Explorar nuestros cafés
+              {primaryButtonText}
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border border-white/30 text-white px-8 py-4 rounded-sm font-inter font-bold hover:bg-white/10 transition-colors group">
-              <Mail size={18} className="text-[#b4843b]" />
-              Solicitar información
-              <ArrowRight size={18} className="text-[#b4843b] group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
+            {secondaryButtonText && (
+              <Link 
+                href="#contacto-footer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border border-white/30 text-white px-8 py-4 rounded-sm font-inter font-bold hover:bg-white/10 transition-colors group cursor-pointer text-center"
+              >
+                <Mail size={18} className="text-[#b4843b]" />
+                {secondaryButtonText}
+                <ArrowRight size={18} className="text-[#b4843b] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            )}
           </div>
         </Reveal>
       </div>

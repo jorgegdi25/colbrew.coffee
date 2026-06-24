@@ -1,62 +1,50 @@
 "use client";
 
 import { Reveal } from "./Reveal";
-import { ArrowRight, MapPin, Leaf, Package, Cherry, Flower2, Citrus, Droplet, Grid2X2, Globe, Sprout, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Globe, Sprout, ChevronLeft, ChevronRight, Coffee, Music } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 import Link from "next/link";
 
 const origins = [
   {
-    image: "/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg",
+    image: "/apia-1.png",
     location: "Apía, Risaralda",
     badgePosition: "bottom-left",
     title: "Apía, Risaralda",
-    description: "Cultivado en las montañas de Apía por familias cafeteras que combinan tradición, dedicación y amor por su tierra.",
+    description: "Territorio cafetero reconocido por su tradición, sus paisajes andinos y el trabajo de familias que han construido una profunda cultura alrededor del café.",
     link: "/apia",
     notes: [
-      { icon: Leaf, label: "Cacao" },
-      { icon: Package, label: "Panela" },
-      { icon: Cherry, label: "Frutos rojos" }
+      { icon: Coffee, label: "Café" },
+      { icon: Music, label: "Cultura" },
+      { icon: Sprout, label: "Comunidad" }
     ]
   },
   {
-    image: "/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg",
+    image: "/jardin-1.png",
     location: "Jardín, Antioquia",
     badgePosition: "top-left",
     title: "Jardín, Antioquia",
-    description: "Cafés de alturas cultivados en el suroeste antioqueño, con perfiles únicos y un carácter inolvidable.",
+    description: "Un origen donde la tradición cafetera, el patrimonio cultural y la riqueza natural hacen parte de la identidad del territorio.",
     link: "/jardin",
     notes: [
-      { icon: Flower2, label: "Florales" },
-      { icon: Citrus, label: "Cítricos" },
-      { icon: Droplet, label: "Miel" }
+      { icon: Coffee, label: "Café" },
+      { icon: Music, label: "Cultura" },
+      { icon: Sprout, label: "Comunidad" }
     ]
   },
   {
-    image: "/closeup-shot-male-hand-picking-cherry-red-coffee-beans-tree.jpg",
+    image: "/ciudad-bolivar.png",
     location: "Ciudad Bolívar, Antioquia",
     badgePosition: "top-left",
     title: "Ciudad Bolívar, Antioquia",
-    description: "Región reconocida por su biodiversidad y microclimas ideales para producir cafés excepcionales.",
+    description: "Montañas, caficultura y comunidades que han encontrado en el café una oportunidad para preservar su identidad y construir futuro.",
     link: "/ciudad-bolivar",
     notes: [
-      { icon: Grid2X2, label: "Chocolate" },
-      { icon: Citrus, label: "Frutas maduras" },
-      { icon: Package, label: "Caramelo" }
-    ]
-  },
-  {
-    image: "/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg",
-    location: "Balboa, Cauca",
-    badgePosition: "bottom-left",
-    title: "Balboa, Cauca",
-    description: "Cultivado en las fértiles tierras del Cauca, ofreciendo una taza perfectamente balanceada y de gran cuerpo.",
-    link: "/comunidad",
-    notes: [
-      { icon: Droplet, label: "Panela" },
-      { icon: Cherry, label: "Mora" },
-      { icon: Leaf, label: "Té negro" }
+      { icon: Coffee, label: "Café" },
+      { icon: Music, label: "Cultura" },
+      { icon: Sprout, label: "Comunidad" }
     ]
   }
 ];
@@ -98,7 +86,7 @@ export function OriginsSection() {
   };
 
   return (
-    <section className="w-full bg-[#FDFBF7] py-20 md:py-32 overflow-hidden text-[#1a281d]">
+    <section id="origenes-section" className="w-full bg-[#FDFBF7] py-20 md:py-32 overflow-hidden text-[#1a281d]">
       <div className="max-w-[1400px] mx-auto px-6 md:px-16">
         
         {/* Header */}
@@ -118,7 +106,7 @@ export function OriginsSection() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="font-inter text-[16px] md:text-[18px] text-[#4a4a4a] leading-relaxed">
-                Descubre los cafés especiales de nuestras comunidades <br className="hidden md:block" /> cafeteras colombianas y el impacto que generan.
+                Descubre los territorios donde nacen las historias que inspiran a COLBREW™. <br className="hidden md:block" /> Cada origen representa una comunidad, una cultura y una visión de futuro construida alrededor del café.
               </p>
             </Reveal>
           </div>
@@ -133,10 +121,13 @@ export function OriginsSection() {
                 <p className="font-inter text-[15px] text-[#4a4a4a] leading-relaxed mb-4">
                   Cada compra apoya programas de educación y música para niños y jóvenes en las regiones donde nace nuestro café.
                 </p>
-                <button className="flex items-center gap-2 font-inter font-bold text-[#b4843b] hover:text-[#9a6f30] transition-colors group">
+                <Link 
+                  href="/comunidad" 
+                  className="flex items-center gap-2 font-inter font-bold text-[#b4843b] hover:text-[#9a6f30] transition-colors group cursor-pointer"
+                >
                   Conoce nuestro impacto
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </div>
           </Reveal>
@@ -186,10 +177,11 @@ export function OriginsSection() {
                     {/* Card Image */}
                     <div className="relative h-[250px] w-full p-4 pb-0">
                       <div className="relative w-full h-full rounded-xl overflow-hidden">
-                        <img 
+                        <Image 
                           src={origin.image} 
-                          alt={origin.title} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          alt={origin.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className={`absolute ${origin.badgePosition === 'top-left' ? 'top-3 left-3' : 'bottom-3 left-3'} bg-[#1a281d]/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-full flex items-center gap-1.5`}>
                           <MapPin size={12} />
@@ -208,9 +200,7 @@ export function OriginsSection() {
                       </p>
 
                       <div className="mb-8">
-                        <p className="font-inter text-[#b4843b] font-bold text-[11px] tracking-[0.1em] uppercase mb-4">
-                          NOTAS DE SABOR
-                        </p>
+                        {/* Notas de sabor removed per strategic change */}
                         <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                           {origin.notes.map((note, idx) => (
                             <div key={idx} className="flex items-center gap-2">
@@ -245,10 +235,13 @@ export function OriginsSection() {
             
             <div className="hidden md:block w-[1px] h-8 bg-[#EBE7DD]"></div>
             
-            <button className="flex items-center gap-2 font-inter font-bold text-[#b4843b] hover:text-[#9a6f30] transition-colors group whitespace-nowrap">
-              Ver todos los cafés
+            <Link 
+              href="/nuestro-origen"
+              className="flex items-center gap-2 font-inter font-bold text-[#b4843b] hover:text-[#9a6f30] transition-colors group whitespace-nowrap cursor-pointer"
+            >
+              Conoce nuestro origen
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </Reveal>
 

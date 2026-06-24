@@ -1,10 +1,10 @@
 "use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
-import { Coffee, Sprout, MapPin, Camera, Star, BookOpen } from "lucide-react";
 
 export default function CiudadBolivarPage() {
   return (
@@ -34,20 +34,21 @@ export default function CiudadBolivarPage() {
                   Ciudad<br />Bolívar
                 </h1>
                 <p className="font-montserrat text-xl md:text-2xl font-medium text-[#1a281d] leading-snug mb-6 max-w-md relative z-10">
-                  Donde el café y la tradición del Suroeste Antioqueño cobran vida.
+                  Donde el café une generaciones y construye territorio.
                 </p>
-                <p className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10">
-                  Ubicado en el corazón del Suroeste de Antioquia, Ciudad Bolívar es un territorio reconocido por su vocación cafetera, sus montañas y el carácter trabajador de su gente. La historia del municipio está profundamente ligada al café y al desarrollo de las comunidades rurales que han construido su identidad alrededor de este cultivo.
-                </p>
+                <div className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10 space-y-4">
+                  <p>
+                    Ubicado en el corazón del Suroeste Antioqueño, Ciudad Bolívar es una comunidad profundamente ligada a la tradición cafetera colombiana. Sus montañas, sus familias productoras y su identidad rural han convertido al café en una parte esencial de la vida del municipio.
+                  </p>
+                  <p>
+                    Para COLBREW™, Ciudad Bolívar representa el valor del trabajo colectivo, el arraigo territorial y el compromiso de las comunidades que han construido su futuro alrededor del café.
+                  </p>
+                </div>
               </Reveal>
             </div>
             {/* Right: Image */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <img 
-                src="/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg" 
-                alt="Paisaje cafetero de Ciudad Bolívar, Antioquia" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <Image src="/ciudad-bolivar.png" alt="Paisaje cafetero de Ciudad Bolívar, Antioquia" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -85,29 +86,31 @@ export default function CiudadBolivarPage() {
           <div className="max-w-3xl mx-auto px-6 md:px-16 text-center relative z-10">
             <Reveal>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                Un territorio cafetero
+                Ubicación
               </h2>
               <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#b4843b] mb-8">
-                con identidad propia
+                En una de las regiones cafeteras más importantes de Antioquia
               </h3>
               <div className="w-16 h-[2px] bg-[#b4843b] mx-auto mb-10"></div>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a] mb-6">
-                Ciudad Bolívar se encuentra a aproximadamente 1.200 metros sobre el nivel del mar y constituye una de las principales cabeceras cafeteras del Suroeste Antioqueño. Su ubicación estratégica y su tradición agrícola han favorecido el desarrollo de una economía fuertemente ligada al café.
+                Ciudad Bolívar se encuentra en el Suroeste Antioqueño, una región reconocida por su tradición agrícola y por la calidad de sus cafés de montaña.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a]">
-                A lo largo de los años, el municipio se ha consolidado como un referente regional para la comercialización y producción cafetera.
+                La ubicación privilegiada del municipio, junto con sus condiciones naturales y la experiencia de sus productores, ha permitido consolidar una fuerte cultura cafetera que continúa siendo motor de desarrollo para muchas familias.
               </p>
+            </Reveal>
+            
+            <Reveal delay={0.2}>
+              <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
+                <Image src="/mapa-ciudad-bolivar.png" alt="Mapa de ubicación de Ciudad Bolívar en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
+              </div>
             </Reveal>
           </div>
         </section>
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <img 
-            src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
-            alt="Cerezas de café en Ciudad Bolívar" 
-            className="w-full h-full object-cover"
-          />
+          <Image src="/ciudad-bolivar-2.png" alt="Cerezas de café en Ciudad Bolívar" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad */}
@@ -115,25 +118,63 @@ export default function CiudadBolivarPage() {
           <div className="max-w-[1400px] mx-auto px-6 md:px-16">
             <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
               <div className="w-full md:w-[55%] order-2 md:order-1">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/adult-woman-picking-coffee-from-plantations.jpg" 
-                    alt="Caficultora en Ciudad Bolívar" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/ciudad-bolivar-3.png" alt="Caficultora en Ciudad Bolívar" fill className="object-cover" />
                 </div>
               </div>
               <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Café y comunidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      ¿Por qué Ciudad Bolívar inspira a COLBREW™?
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Una comunidad construida alrededor del café
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      La producción de café hace parte de la vida cotidiana de miles de familias del municipio. Se estima que una parte significativa de la población encuentra en el café su principal actividad económica y una tradición transmitida entre generaciones.
+                      Ciudad Bolívar refleja la relación que existe entre el café y el desarrollo de los territorios rurales.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Aquí el café no solamente genera actividad económica. También forma parte de las historias familiares, de las tradiciones locales y de la identidad que comparten quienes han crecido en esta región.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      Más allá de la producción, el café representa identidad, arraigo y oportunidades para las comunidades rurales de la región.
+                      COLBREW™ busca visibilizar comunidades que demuestran cómo el café puede convertirse en un puente entre tradición, oportunidades y futuro.
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 2.5: Café que conecta personas (Image Left) */}
+        <section className="py-24 md:py-32 bg-[#FDFBF7]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
+            <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
+              {/* Image takes up more space */}
+              <div className="w-full md:w-[55%] order-2 md:order-1">
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/ciudad-bolivar-4.png" alt="Tradición cafetera de Ciudad Bolívar" fill className="object-cover" />
+                </div>
+              </div>
+              {/* Text block with left accent border */}
+              <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
+                <Reveal>
+                  <div className="border-l-[3px] border-[#b4843b] pl-8">
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Café que conecta personas
+                    </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Familias que mantienen viva una tradición
+                    </h3>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Generaciones de productores han dedicado su trabajo al cultivo del café en las montañas de Ciudad Bolívar.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Detrás de cada cosecha existen conocimientos, experiencias y valores transmitidos de padres a hijos, fortaleciendo el vínculo entre las personas y el territorio que habitan.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a]">
+                      Estas historias son parte fundamental de lo que COLBREW™ desea compartir con consumidores que valoran el origen de cada taza.
                     </p>
                   </div>
                 </Reveal>
@@ -149,25 +190,27 @@ export default function CiudadBolivarPage() {
               <div className="w-full md:w-[45%] flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Naturaleza y biodiversidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Territorio y Sostenibilidad
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Montañas que hacen posible el café
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      Ciudad Bolívar es uno de los municipios más montañosos de Antioquia. Su territorio está rodeado por montañas, bosques, fuentes hídricas y paisajes que forman parte de la riqueza natural del Suroeste Antioqueño.
+                      Los paisajes montañosos del Suroeste Antioqueño forman parte del entorno natural que ha permitido el desarrollo de la actividad cafetera en Ciudad Bolívar.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      La relación entre tierra, agua, biodiversidad y comunidad es un elemento fundamental para comprender la importancia de proteger estos territorios para las futuras generaciones.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      La relación entre naturaleza y producción cafetera hace que el territorio conserve un fuerte vínculo con su entorno ambiental.
+                      Para COLBREW™, la sostenibilidad comienza reconociendo el valor de los lugares donde nace el café.
                     </p>
                   </div>
                 </Reveal>
               </div>
               <div className="w-full md:w-[55%]">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/scenic-view-agricultural-field-against-sky.jpg" 
-                    alt="Montañas de Ciudad Bolívar" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/ciudad-bolivar-5.png" alt="Montañas de Ciudad Bolívar" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -201,56 +244,32 @@ export default function CiudadBolivarPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/low-angle-view-coffee-farm-hill-against-sky.jpg')" }}
+          style={{ backgroundImage: "url('/ciudad-bolivar-2.png')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">
             <Reveal>
-              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
-                Cultura que inspira
+              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                Cultura y juventud
               </h2>
+              <h3 className="font-montserrat text-xl md:text-2xl text-[#d4a860] mb-8 font-medium">
+                Tradición que mira hacia el futuro
+              </h3>
               <div className="w-12 h-[2px] bg-[#b4843b] mx-auto mb-8"></div>
               <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
-                La cultura de Ciudad Bolívar está marcada por la tradición arriera, el trabajo rural y el espíritu emprendedor de sus habitantes. Sus festividades, costumbres y expresiones culturales reflejan el carácter de una comunidad orgullosa de sus raíces.
+                Las nuevas generaciones tienen un papel fundamental en la continuidad de la cultura cafetera.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-white/70 italic">
-                Esta conexión entre territorio, comunidad y tradición es uno de los elementos que mejor representa la visión de COLBREW™ de fortalecer los orígenes cafeteros colombianos.
+              <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
+                Ciudad Bolívar es un ejemplo de cómo la identidad local puede fortalecerse a través de iniciativas comunitarias, espacios culturales y proyectos que generan nuevas oportunidades para niños y jóvenes.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-white/90">
+                COLBREW™ cree que el café puede convertirse en una herramienta para impulsar estas oportunidades y fortalecer el arraigo de las comunidades a su territorio.
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* SECCIÓN 5: Lo que encontrarás próximamente */}
-        <section className="py-24 md:py-32 bg-[#FDFBF7]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
-            <Reveal>
-              <div className="text-center mb-16">
-                <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                  Próximamente
-                </h2>
-                <p className="text-lg text-[#4a4a4a]">Lo que encontrarás en esta sección de Ciudad Bolívar</p>
-              </div>
-            </Reveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { icon: Coffee, title: "Cafés de Ciudad Bolívar", text: "Cafés seleccionados de esta región." },
-                { icon: BookOpen, title: "Historias de productores", text: "Relatos de quienes cultivan el café." },
-                { icon: Camera, title: "Fotografías", text: "Imágenes reales de fincas y comunidades." },
-                { icon: MapPin, title: "Trazabilidad", text: "Información detallada sobre cada origen." },
-                { icon: Sprout, title: "Impacto social y cultural", text: "Proyectos que transforman la región." },
-                { icon: Star, title: "Experiencias", text: "Actividades alrededor del café local." },
-              ].map((item, idx) => (
-                <Reveal key={idx} delay={0.08 * (idx + 1)}>
-                  <div className="group p-8 border border-[#EBE7DD] rounded-sm bg-white hover:border-[#b4843b]/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <item.icon size={28} className="text-[#b4843b] mb-5 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
-                    <h3 className="font-montserrat text-lg font-bold text-[#1a281d] mb-2">{item.title}</h3>
-                    <p className="text-[#4a4a4a] text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* CTA FINAL GLOBAL */}
         <CtaSection />

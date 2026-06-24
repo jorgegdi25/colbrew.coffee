@@ -1,10 +1,10 @@
 "use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
-import { Coffee, Sprout, MapPin, Camera, Star, BookOpen } from "lucide-react";
 
 export default function JardinPage() {
   return (
@@ -36,18 +36,19 @@ export default function JardinPage() {
                 <p className="font-montserrat text-xl md:text-2xl font-medium text-[#1a281d] leading-snug mb-6 max-w-md relative z-10">
                   Donde la tradición cafetera florece entre montañas.
                 </p>
-                <p className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10">
-                  Ubicado en el Suroeste Antioqueño, Jardín es uno de los pueblos patrimoniales más reconocidos de Colombia. Rodeado por montañas, ríos y cafetales, este territorio combina una profunda tradición cafetera con una riqueza cultural y natural que lo convierte en uno de los destinos más emblemáticos del país.
-                </p>
+                <div className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10 space-y-4">
+                  <p>
+                    Jardín es uno de los territorios más representativos del suroeste antioqueño. Reconocido por su patrimonio arquitectónico, sus paisajes montañosos y su profunda cultura cafetera, este municipio refleja la riqueza humana y natural que caracteriza a las regiones productoras de café en Colombia.
+                  </p>
+                  <p>
+                    Para COLBREW™, Jardín representa la conexión entre tradición, identidad y comunidad.
+                  </p>
+                </div>
               </Reveal>
             </div>
             {/* Right: Image — slightly wider to break symmetry */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <img 
-                src="/scenic-view-agricultural-field-against-sky.jpg" 
-                alt="Paisaje cafetero de Jardín, Antioquia" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <Image src="/jardin-1.png" alt="Paisaje cafetero de Jardín, Antioquia" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -86,29 +87,31 @@ export default function JardinPage() {
           <div className="max-w-3xl mx-auto px-6 md:px-16 text-center relative z-10">
             <Reveal>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                Un territorio cafetero
+                Ubicación
               </h2>
               <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#b4843b] mb-8">
-                con identidad propia
+                En el corazón del Suroeste Antioqueño
               </h3>
               <div className="w-16 h-[2px] bg-[#b4843b] mx-auto mb-10"></div>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a] mb-6">
-                Jardín se encuentra a una altitud promedio cercana a los 1.750 metros sobre el nivel del mar. Su clima templado, la fertilidad de sus montañas y la abundancia de agua han creado condiciones ideales para el desarrollo de la cultura cafetera.
+                Ubicado al sur del departamento de Antioquia, Jardín forma parte de una de las regiones cafeteras más importantes del país.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a]">
-                Fundado en 1863 y erigido como municipio en 1882, Jardín conserva gran parte de su arquitectura tradicional y de las costumbres que han acompañado a las familias cafeteras durante generaciones.
+                Sus montañas, ríos y paisajes agrícolas han permitido el desarrollo de comunidades que durante generaciones han encontrado en el café una forma de vida y una expresión de su identidad territorial.
               </p>
+            </Reveal>
+            
+            <Reveal delay={0.2}>
+              <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
+                <Image src="/mapa-jardin.png" alt="Mapa de ubicación de Jardín en Antioquia" width={800} height={800} className="w-full h-auto object-cover" />
+              </div>
             </Reveal>
           </div>
         </section>
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <img 
-            src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
-            alt="Cerezas de café en las montañas de Jardín" 
-            className="w-full h-full object-cover"
-          />
+          <Image src="/jardin-2.png" alt="Cerezas de café en las montañas de Jardín" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad — Asymmetric layout */}
@@ -117,26 +120,64 @@ export default function JardinPage() {
             <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/adult-woman-picking-coffee-from-plantations.jpg" 
-                    alt="Caficultora en Jardín" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/jardin-3.png" alt="Caficultora en Jardín" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
               <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Café y comunidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      ¿Por qué Jardín inspira a COLBREW™?
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Un territorio que conserva su esencia
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      El café forma parte esencial de la economía y la identidad de Jardín. Las fincas cafeteras, muchas de ellas familiares, han contribuido al desarrollo de la región y a la preservación de conocimientos que se transmiten de generación en generación.
+                      Jardín demuestra que el desarrollo y la tradición pueden avanzar juntos.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Su comunidad ha logrado preservar costumbres, arquitectura, cultura y prácticas cafeteras que hoy hacen parte de la identidad del municipio.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      Más allá del cultivo, el café hace parte de la vida cotidiana de la comunidad y de las historias que conectan a productores, visitantes y habitantes de la región.
+                      COLBREW™ busca destacar territorios que entienden el valor de sus raíces y que continúan construyendo oportunidades sin perder aquello que los hace únicos.
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 2.5: Café que conecta personas (Image Left) */}
+        <section className="py-24 md:py-32 bg-[#FDFBF7]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
+            <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
+              {/* Image takes up more space */}
+              <div className="w-full md:w-[55%] order-2 md:order-1">
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/jardin-4.png" alt="Tradición cafetera de Jardín" fill className="object-cover" />
+                </div>
+              </div>
+              {/* Text block with left accent border */}
+              <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
+                <Reveal>
+                  <div className="border-l-[3px] border-[#b4843b] pl-8">
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Café que conecta personas
+                    </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Una tradición que une generaciones
+                    </h3>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      El café ha acompañado la historia de Jardín durante décadas.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Detrás de cada finca existen familias que han transmitido conocimientos, experiencias y valores relacionados con la producción cafetera.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a]">
+                      Más que una actividad económica, el café se ha convertido en un elemento que fortalece los vínculos entre las personas y mantiene viva la identidad rural del territorio.
                     </p>
                   </div>
                 </Reveal>
@@ -153,26 +194,28 @@ export default function JardinPage() {
               <div className="w-full md:w-[45%] flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Naturaleza y biodiversidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Territorio y Sostenibilidad
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Montañas que dan origen
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      Jardín es reconocido por sus paisajes montañosos, su exuberante vegetación y la gran cantidad de ríos y quebradas que recorren el territorio. La región cuenta con diversos pisos térmicos y una biodiversidad excepcional que hace parte de su riqueza natural.
+                      Las condiciones naturales de Jardín han permitido el desarrollo de una cultura cafetera profundamente conectada con el paisaje.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Sus montañas, bosques y fuentes de agua forman parte del entorno que hace posible la producción agrícola y el bienestar de las comunidades.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      La relación entre montaña, agua y café ha contribuido a consolidar un entorno único para la producción cafetera.
+                      Para COLBREW™, cuidar estos territorios significa preservar el origen de las historias que queremos compartir con el mundo.
                     </p>
                   </div>
                 </Reveal>
               </div>
               {/* Image on the right */}
               <div className="w-full md:w-[55%]">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/low-angle-view-coffee-farm-hill-against-sky.jpg" 
-                    alt="Paisajes montañosos de Jardín" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/jardin-5.png" alt="Paisajes montañosos de Jardín" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -206,56 +249,32 @@ export default function JardinPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg')" }}
+          style={{ backgroundImage: "url('/jardin-6.png')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">
             <Reveal>
-              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
-                Cultura que inspira
+              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                Cultura y juventud
               </h2>
+              <h3 className="font-montserrat text-xl md:text-2xl text-[#d4a860] mb-8 font-medium">
+                Identidad que trasciende generaciones
+              </h3>
               <div className="w-12 h-[2px] bg-[#b4843b] mx-auto mb-8"></div>
               <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
-                Jardín es también un referente cultural del Suroeste Antioqueño. Sus tradiciones, festivales, expresiones artísticas y el valor de su patrimonio arquitectónico hacen parte de una identidad que se mantiene viva a través de su gente.
+                Jardín es reconocido por su riqueza cultural, sus tradiciones y el fuerte sentido de pertenencia de su gente.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-white/70 italic">
-                Este vínculo entre cultura, territorio y comunidad conecta naturalmente con la visión de COLBREW™ de dar visibilidad a los orígenes que hacen posible cada café.
+              <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
+                Las expresiones artísticas, las celebraciones locales y las iniciativas comunitarias ayudan a fortalecer la identidad de nuevas generaciones que continúan construyendo el futuro del territorio.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-white/90">
+                COLBREW™ cree que el café también puede ser una herramienta para visibilizar y apoyar estas iniciativas.
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* SECCIÓN 5: Lo que encontrarás próximamente */}
-        <section className="py-24 md:py-32 bg-[#FDFBF7]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
-            <Reveal>
-              <div className="text-center mb-16">
-                <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                  Próximamente
-                </h2>
-                <p className="text-lg text-[#4a4a4a]">Lo que encontrarás en esta sección de Jardín</p>
-              </div>
-            </Reveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { icon: Coffee, title: "Cafés de Jardín", text: "Cafés seleccionados de esta región." },
-                { icon: BookOpen, title: "Historias de productores", text: "Relatos de quienes cultivan el café." },
-                { icon: Camera, title: "Fotografías", text: "Imágenes reales de fincas y comunidades." },
-                { icon: MapPin, title: "Trazabilidad", text: "Información detallada sobre cada origen." },
-                { icon: Sprout, title: "Impacto social y cultural", text: "Proyectos que transforman la región." },
-                { icon: Star, title: "Experiencias", text: "Actividades alrededor del café local." },
-              ].map((item, idx) => (
-                <Reveal key={idx} delay={0.08 * (idx + 1)}>
-                  <div className="group p-8 border border-[#EBE7DD] rounded-sm bg-white hover:border-[#b4843b]/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <item.icon size={28} className="text-[#b4843b] mb-5 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
-                    <h3 className="font-montserrat text-lg font-bold text-[#1a281d] mb-2">{item.title}</h3>
-                    <p className="text-[#4a4a4a] text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* CTA FINAL GLOBAL */}
         <CtaSection />

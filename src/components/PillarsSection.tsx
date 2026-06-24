@@ -12,8 +12,8 @@ const pillars = [
         <path d="M12 18C12 18 10 16 8 16C7 16 6.5 17 6.5 18C6.5 19 9 20 12 22"></path>
       </svg>
     ),
-    title: "Café Especial",
-    description: "Promovemos cafés colombianos de alta calidad con identidad, origen y trazabilidad.",
+    title: "Café con propósito",
+    description: "Promovemos cafés especiales colombianos que representan territorios, productores y comunidades.",
   },
   {
     icon: (
@@ -24,8 +24,8 @@ const pillars = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
       </svg>
     ),
-    title: "Comunidad",
-    description: "Trabajamos junto a productores y territorios cafeteros para crear oportunidades y desarrollo.",
+    title: "Cultura y juventud",
+    description: "Apoyamos iniciativas culturales y escuelas de música que fortalecen nuevas generaciones.",
   },
   {
     icon: (
@@ -35,8 +35,8 @@ const pillars = [
         <path d="M10 12h4"></path>
       </svg>
     ),
-    title: "Impacto",
-    description: "Apoyamos iniciativas culturales, educativas y ambientales que transforman comunidades.",
+    title: "Territorio e impacto",
+    description: "Cada origen conecta café, identidad local y oportunidades para el desarrollo regional.",
   },
 ];
 

@@ -1,10 +1,10 @@
 "use client";
 
 import { TopNavBar } from "@/components/TopNavBar";
+import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
-import { Coffee, Sprout, MapPin, Camera, Star, BookOpen } from "lucide-react";
 
 export default function ApiaPage() {
   return (
@@ -34,20 +34,21 @@ export default function ApiaPage() {
                   Apía
                 </h1>
                 <p className="font-montserrat text-xl md:text-2xl font-medium text-[#1a281d] leading-snug mb-6 max-w-md relative z-10">
-                  Donde el café, la cultura y la montaña se encuentran.
+                  Donde el café impulsa comunidad, cultura y oportunidades.
                 </p>
-                <p className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10">
-                  Ubicado en el corazón de Risaralda, Apía forma parte del Paisaje Cultural Cafetero Colombiano, reconocido por la UNESCO como Patrimonio Mundial.
-                </p>
+                <div className="font-inter text-base md:text-lg text-[#4a4a4a] leading-relaxed max-w-lg relative z-10 space-y-4">
+                  <p>
+                    Apía es uno de los territorios que inspiran la visión de COLBREW™. Ubicado en el corazón del Paisaje Cultural Cafetero Colombiano, este municipio reúne tradición cafetera, riqueza natural y una profunda conexión con la cultura y la comunidad.
+                  </p>
+                  <p>
+                    Más que un origen cafetero, Apía representa el potencial que tienen los territorios cuando el café se convierte en una herramienta para construir futuro.
+                  </p>
+                </div>
               </Reveal>
             </div>
             {/* Right: Image — slightly wider to break symmetry */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
-              <img 
-                src="/low-angle-view-coffee-farm-hill-against-sky.jpg" 
-                alt="Paisaje cafetero de Apía, Risaralda" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <Image src="/paisaje-apia.png" alt="Paisaje cafetero de Apía, Risaralda" fill className="object-cover" />
             </div>
           </div>
         </section>
@@ -86,29 +87,31 @@ export default function ApiaPage() {
           <div className="max-w-3xl mx-auto px-6 md:px-16 text-center relative z-10">
             <Reveal>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                Un territorio cafetero
+                Ubicación
               </h2>
               <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#b4843b] mb-8">
-                con identidad propia
+                En el corazón del Paisaje Cultural Cafetero
               </h3>
               <div className="w-16 h-[2px] bg-[#b4843b] mx-auto mb-10"></div>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a] mb-6">
-                Apía se encuentra a aproximadamente 1.630 metros sobre el nivel del mar, en el occidente de Risaralda. Su clima templado, sus montañas y su ubicación dentro del Eje Cafetero han favorecido históricamente la producción de café de alta calidad.
+                Apía se encuentra en el occidente del departamento de Risaralda, dentro del Paisaje Cultural Cafetero declarado Patrimonio Mundial por la UNESCO.
               </p>
               <p className="text-lg md:text-xl leading-relaxed text-[#4a4a4a]">
-                El municipio fue fundado en 1883 y forma parte de una región donde la cultura cafetera ha sido transmitida de generación en generación.
+                Rodeado de montañas andinas y cercano al Parque Nacional Natural Tatamá, este territorio ha construido gran parte de su identidad alrededor del café y del trabajo de sus comunidades rurales.
               </p>
+            </Reveal>
+            
+            <Reveal delay={0.2}>
+              <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
+                <Image src="/mapa-apia.png" alt="Mapa de ubicación de Apía en Risaralda" width={800} height={800} className="w-full h-auto object-cover" />
+              </div>
             </Reveal>
           </div>
         </section>
 
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
-          <img 
-            src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
-            alt="Cerezas de café madurando en Apía" 
-            className="w-full h-full object-cover"
-          />
+          <Image src="/apia-1.png" alt="Cerezas de café madurando en Apía" fill className="object-cover" />
         </section>
 
         {/* SECCIÓN 2: Café y comunidad — Asymmetric layout */}
@@ -117,26 +120,28 @@ export default function ApiaPage() {
             <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
               {/* Image takes up more space */}
               <div className="w-full md:w-[55%] order-2 md:order-1">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/adult-woman-picking-coffee-from-plantations.jpg" 
-                    alt="Caficultora en Apía" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/apia-2.png" alt="Caficultora en Apía" fill className="object-cover" />
                 </div>
               </div>
               {/* Text block with left accent border */}
               <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Café y comunidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      ¿Por qué Apía inspira a COLBREW™?
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Un territorio que conecta tradición y futuro
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      La economía de Apía está estrechamente ligada al café. Miles de familias han encontrado en este cultivo una forma de vida y una tradición que continúa evolucionando con nuevas generaciones de productores.
+                      COLBREW™ nace con la convicción de que el café puede generar algo más que desarrollo económico.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      Apía representa esa visión porque aquí conviven productores, familias, jóvenes, iniciativas culturales y una fuerte identidad territorial construida alrededor del café.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      Más allá de la producción agrícola, el café hace parte de la identidad cultural del municipio y de las historias que unen a las familias, las veredas y las comunidades rurales.
+                      Es el tipo de comunidad que demuestra cómo el origen de una taza también puede convertirse en una oportunidad para fortalecer el tejido social y cultural de una región.
                     </p>
                   </div>
                 </Reveal>
@@ -144,6 +149,43 @@ export default function ApiaPage() {
             </div>
           </div>
         </section>
+
+        {/* SECCIÓN 2.5: Café que conecta personas (Image Left) */}
+        <section className="py-24 md:py-32 bg-[#FDFBF7]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
+            <div className="flex flex-col md:flex-row items-stretch gap-0 md:gap-16">
+              {/* Image takes up more space */}
+              <div className="w-full md:w-[55%] order-2 md:order-1">
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/apia-3.png" alt="Expresiones culturales de Apía" fill className="object-cover" />
+                </div>
+              </div>
+              {/* Text block with left accent border */}
+              <div className="w-full md:w-[45%] order-1 md:order-2 flex flex-col justify-center py-8 md:py-16">
+                <Reveal>
+                  <div className="border-l-[3px] border-[#b4843b] pl-8">
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Café que conecta personas
+                    </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Música, cultura y tejido social
+                    </h3>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      En Apía, el café no solo se cultiva; también se comparte como parte del tejido social y cultural del municipio.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      A través de iniciativas como la música, las familias y los jóvenes de la región encuentran en la caficultura un punto de unión, un espacio para el aprendizaje y un motor para la construcción de identidad.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a]">
+                      COLBREW™ se asocia con el territorio de Apía para que cada taza apoye estas expresiones culturales, ayudando a crear un futuro donde el café sea sinónimo de oportunidades y comunidad.
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* SECCIÓN 3: Naturaleza y biodiversidad — Opposite direction */}
         <section className="py-24 md:py-32 bg-[#FDFBF7]">
@@ -153,26 +195,28 @@ export default function ApiaPage() {
               <div className="w-full md:w-[45%] flex flex-col justify-center py-8 md:py-16">
                 <Reveal>
                   <div className="border-l-[3px] border-[#b4843b] pl-8">
-                    <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
-                      Naturaleza y biodiversidad
+                    <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                      Territorio y Sostenibilidad
                     </h2>
+                    <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-6">
+                      Naturaleza que da origen
+                    </h3>
                     <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
-                      Apía es reconocida por sus paisajes montañosos y por su cercanía al Parque Nacional Natural Tatamá, una de las áreas de mayor biodiversidad de Colombia. Desde muchos puntos del municipio es posible observar el Cerro Tatamá y los bosques que caracterizan esta región andina.
+                      Las montañas, bosques y fuentes hídricas que rodean Apía forman parte del ecosistema que hace posible la producción cafetera.
+                    </p>
+                    <p className="text-lg leading-relaxed text-[#4a4a4a] mb-6">
+                      La cercanía con el Parque Nacional Natural Tatamá convierte a este territorio en una de las regiones con mayor riqueza natural del país.
                     </p>
                     <p className="text-lg leading-relaxed text-[#4a4a4a]">
-                      La riqueza natural del territorio hace que la relación entre café, agua, bosque y biodiversidad sea parte fundamental de la vida local.
+                      Para COLBREW™, proteger estos entornos es también proteger las comunidades que dependen de ellos.
                     </p>
                   </div>
                 </Reveal>
               </div>
               {/* Image on the right */}
               <div className="w-full md:w-[55%]">
-                <div className="w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
-                  <img 
-                    src="/scenic-view-agricultural-field-against-sky.jpg" 
-                    alt="Naturaleza de Apía y el Cerro Tatamá" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
+                  <Image src="/apia-4.png" alt="Naturaleza de Apía y el Cerro Tatamá" fill className="object-cover" />
                 </div>
               </div>
             </div>
@@ -206,56 +250,32 @@ export default function ApiaPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.jpg')" }}
+          style={{ backgroundImage: "url('/apia-5.png')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">
             <Reveal>
-              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
-                Cultura que inspira
+              <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                Cultura y juventud
               </h2>
+              <h3 className="font-montserrat text-xl md:text-2xl text-[#d4a860] mb-8 font-medium">
+                Café, música e identidad
+              </h3>
               <div className="w-12 h-[2px] bg-[#b4843b] mx-auto mb-8"></div>
               <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
-                Apía también es reconocida por sus expresiones culturales y musicales. El municipio ha sido cuna de músicos, artistas y gestores culturales que han contribuido al desarrollo social de la región.
+                Apía es reconocido por su vida cultural y por las iniciativas que promueven el arte, la música y la participación de niños y jóvenes.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-white/70 italic">
-                Este vínculo entre cultura y comunidad es uno de los elementos que más conecta con la visión de COLBREW™ de fortalecer territorios a través del café y las oportunidades que nacen alrededor de él.
+              <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-6">
+                Estas expresiones fortalecen el sentido de pertenencia y ayudan a construir oportunidades que trascienden la actividad agrícola.
+              </p>
+              <p className="text-lg md:text-xl leading-relaxed text-white/90">
+                Por eso COLBREW™ busca destacar territorios donde el café también sirve como punto de encuentro para la cultura y el desarrollo comunitario.
               </p>
             </Reveal>
           </div>
         </section>
 
-        {/* SECCIÓN 5: Lo que encontrarás próximamente */}
-        <section className="py-24 md:py-32 bg-[#FDFBF7]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
-            <Reveal>
-              <div className="text-center mb-16">
-                <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                  Próximamente
-                </h2>
-                <p className="text-lg text-[#4a4a4a]">Lo que encontrarás en esta sección de Apía</p>
-              </div>
-            </Reveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { icon: Coffee, title: "Cafés de Apía", text: "Cafés seleccionados de esta región." },
-                { icon: BookOpen, title: "Historias de productores", text: "Relatos de quienes cultivan el café." },
-                { icon: Camera, title: "Fotografías", text: "Imágenes reales de fincas y comunidades." },
-                { icon: MapPin, title: "Trazabilidad", text: "Información detallada sobre cada origen." },
-                { icon: Sprout, title: "Impacto social y cultural", text: "Proyectos que transforman la región." },
-                { icon: Star, title: "Experiencias", text: "Actividades alrededor del café local." },
-              ].map((item, idx) => (
-                <Reveal key={idx} delay={0.08 * (idx + 1)}>
-                  <div className="group p-8 border border-[#EBE7DD] rounded-sm bg-white hover:border-[#b4843b]/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <item.icon size={28} className="text-[#b4843b] mb-5 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
-                    <h3 className="font-montserrat text-lg font-bold text-[#1a281d] mb-2">{item.title}</h3>
-                    <p className="text-[#4a4a4a] text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* CTA FINAL GLOBAL */}
         <CtaSection />

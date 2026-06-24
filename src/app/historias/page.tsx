@@ -30,17 +30,27 @@ export default async function HistoriasPage() {
       
       <main>
         {/* HERO */}
-        <section className="pt-32 pb-16 bg-[#FDFBF7]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 text-center">
-            <Reveal>
-              <h1 className="font-montserrat text-[48px] md:text-[64px] font-bold text-[#1a281d] leading-[1.1] mb-6">
-                Historias
-              </h1>
-              <div className="w-16 h-1 bg-[#b4843b] mx-auto mb-8"></div>
-              <p className="font-inter text-[18px] md:text-[22px] text-[#4a4a4a] leading-relaxed max-w-3xl mx-auto">
-                Explora el mundo del café colombiano. Desde las historias de nuestras familias caficultoras hasta recetas, tecnología y cultura cafetera.
-              </p>
-            </Reveal>
+        <section className="relative w-full h-[380px] md:h-[450px] flex items-center">
+          <div className="absolute inset-0">
+             <img 
+               src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.jpg" 
+               alt="Cerezas de café en la planta" 
+               className="w-full h-full object-cover" 
+             />
+             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+          </div>
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 w-full">
+            <div className="max-w-2xl">
+              <Reveal>
+                <h1 className="font-montserrat text-[48px] md:text-[72px] font-bold text-white leading-[1.1] mb-6">
+                  Historias
+                </h1>
+                <div className="w-16 h-1 bg-[#b4843b] mb-8"></div>
+                <p className="font-inter text-[16px] md:text-[20px] text-white/90 leading-relaxed font-medium">
+                  Explora el mundo del café colombiano. Desde las historias de nuestras familias caficultoras hasta los proyectos sociales, la cultura y las oportunidades que construimos en el territorio.
+                </p>
+              </Reveal>
+            </div>
           </div>
         </section>
 
@@ -83,7 +93,7 @@ export default async function HistoriasPage() {
                             </>
                           )}
                         </div>
-                        <h2 className="font-montserrat text-2xl font-bold text-[#1a281d] mb-4 group-hover:text-[#b4843b] transition-colors line-clamp-2">
+                        <h2 className="font-montserrat text-2xl font-bold text-[#1a281d] mb-4 group-hover:text-[#b4843b] transition-colors line-clamp-4">
                           {post.title}
                         </h2>
                         <p className="font-inter text-[#4a4a4a] leading-relaxed mb-6 flex-grow line-clamp-3">

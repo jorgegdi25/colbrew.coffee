@@ -10,6 +10,7 @@ const processSteps = [
       </svg>
     ),
     label: "Café de origen",
+    description: "Seleccionamos cafés especiales con identidad territorial.",
   },
   {
     icon: (
@@ -19,7 +20,8 @@ const processSteps = [
         <path d="M2 10h20"></path>
       </svg>
     ),
-    label: "Productores",
+    label: "Productores y comunidades",
+    description: "Trabajamos junto a regiones cafeteras comprometidas con la calidad.",
   },
   {
     icon: (
@@ -31,7 +33,8 @@ const processSteps = [
         <line x1="14" y1="1" x2="14" y2="4"></line>
       </svg>
     ),
-    label: "Experiencias incomparables",
+    label: "Cultura y juventud",
+    description: "Apoyamos iniciativas culturales que fortalecen oportunidades para nuevas generaciones.",
   },
   {
     icon: (
@@ -41,7 +44,8 @@ const processSteps = [
         <circle cx="18" cy="16" r="3"></circle>
       </svg>
     ),
-    label: "Cultura y educación",
+    label: "Consumidores conscientes",
+    description: "Personas que valoran el origen y el impacto detrás de cada taza.",
   },
   {
     icon: (
@@ -50,7 +54,8 @@ const processSteps = [
         <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
       </svg>
     ),
-    label: "Sostenibilidad y futuro",
+    label: "Futuro sostenible",
+    description: "Construimos conexiones que generan valor para los territorios.",
   },
 ];
 
@@ -70,9 +75,12 @@ export function ProcessBar() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
         <Reveal>
           <div className="mb-16">
-            <h2 className="font-montserrat text-[32px] md:text-[42px] font-bold text-white mb-4">
+            <h2 className="font-montserrat text-[32px] md:text-[42px] font-bold text-white mb-2">
               Del grano al impacto
             </h2>
+            <p className="font-inter text-[#d4a860] md:text-[#b4843b] font-medium text-[16px] md:text-[18px] mb-6">
+              Cómo funciona COLBREW™
+            </p>
             <div className="w-[45px] h-[3px] bg-[#b4843b]" />
           </div>
         </Reveal>
@@ -85,8 +93,11 @@ export function ProcessBar() {
                   <div className="mb-4 text-[#b4843b]">
                     {step.icon}
                   </div>
-                  <span className="font-inter text-[14px] md:text-[15px] text-white font-medium max-w-[120px] leading-snug">
+                  <span className="font-inter text-[16px] text-white font-bold max-w-[140px] leading-snug mb-2">
                     {step.label}
+                  </span>
+                  <span className="font-inter text-[13px] text-white/80 max-w-[160px] leading-relaxed hidden md:block">
+                    {step.description}
                   </span>
                 </div>
                 
