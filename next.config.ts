@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true,
+    // Next.js se encargará de optimizar, comprimir y convertir a WebP/AVIF automáticamente
   },
 };
 
