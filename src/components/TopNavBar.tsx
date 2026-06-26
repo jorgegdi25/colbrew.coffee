@@ -16,6 +16,7 @@ const navItems = [
     subItems: [
       { label: "Apía", href: "/apia" },
       { label: "Ciudad Bolívar", href: "/ciudad-bolivar" },
+      { label: "Jardín", href: "/jardin" },
       { label: "Líbano", href: "/libano" },
       { label: "Planadas", href: "/planadas" },
     ]
