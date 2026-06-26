@@ -149,6 +149,20 @@ export default function ComunidadPage() {
                   Conocer más <ArrowRight size={16} />
                 </div>
               </Link>
+
+              {/* Bloque 5 */}
+              <Link href="/libano" className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] group cursor-pointer block">
+                <div className="relative w-full h-[320px] overflow-hidden rounded-sm mb-6">
+                  <Image src="/libano.webp" alt="Líbano" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+                <h3 className="font-montserrat text-xl font-bold text-[#1a281d] mb-2 flex items-center gap-2 group-hover:text-[#b4843b] transition-colors">
+                  📍 Líbano, Tolima
+                </h3>
+                <p className="text-base text-[#4a4a4a] mb-4">Un territorio donde la tradición cafetera ha unido generaciones y el legado fortalece a la comunidad.</p>
+                <div className="text-[#b4843b] font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Conocer más <ArrowRight size={16} />
+                </div>
+              </Link>
             </div>
           </div>
         </section>

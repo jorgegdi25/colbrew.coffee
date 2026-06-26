@@ -59,6 +59,19 @@ const origins = [
       { icon: Music, label: "Cultura" },
       { icon: Sprout, label: "Comunidad" }
     ]
+  },
+  {
+    image: "/libano.webp",
+    location: "Líbano, Tolima",
+    badgePosition: "bottom-left",
+    title: "Líbano, Tolima",
+    description: "Un territorio donde la tradición cafetera ha unido generaciones y el legado agrícola fortalece el desarrollo de la comunidad.",
+    link: "/libano",
+    notes: [
+      { icon: Coffee, label: "Café" },
+      { icon: Music, label: "Cultura" },
+      { icon: Sprout, label: "Comunidad" }
+    ]
   }
 ];
 
