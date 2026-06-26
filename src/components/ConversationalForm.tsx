@@ -60,19 +60,16 @@ export function ConversationalForm() {
     setError("");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE",
           name: name,
           email: email,
           message: message,
-          subject: `Nuevo contacto desde COLBREW web - ${name}`,
-          from_name: "COLBREW Web Contacto",
         }),
       });
 
@@ -81,12 +78,12 @@ export function ConversationalForm() {
       if (result.success) {
         setStep(4);
       } else {
-        console.warn("Falta Access Key de Web3Forms. Simulando éxito.");
-        setStep(4);
+        // En caso de que falle por falta de contraseña SMTP, mostramos el error
+        setError(result.message || "Ocurrió un error. Verifica tu configuración de correo.");
       }
     } catch (err) {
       console.error(err);
-      setStep(4);
+      setError("Ocurrió un error interno. Intenta de nuevo.");
     } finally {
       setIsSubmitting(false);
     }
