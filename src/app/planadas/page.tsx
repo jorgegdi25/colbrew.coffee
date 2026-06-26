@@ -85,7 +85,7 @@ export default function PlanadasPage() {
             
             <Reveal delay={0.2}>
               <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
-                <img src="/planadas1.webp" alt="Cultivo de café" className="w-full h-auto object-cover" />
+                <Image src="/mapa-planadas.png" alt="Mapa de ubicación de Planadas" width={800} height={800} className="w-full h-auto object-cover" />
               </div>
             </Reveal>
           </div>
@@ -213,25 +213,7 @@ export default function PlanadasPage() {
           </div>
         </section>
 
-        {/* SECCIÓN MAPA */}
-        <section className="py-24 bg-[#F8F7F2]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center">
-            <Reveal>
-              <div className="text-center mb-12">
-                <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
-                  Ubicación
-                </h2>
-                <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
-                  El sur del Tolima
-                </h3>
-                <div className="w-16 h-[2px] bg-[#b4843b] mx-auto"></div>
-              </div>
-              <div className="relative w-full max-w-4xl h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-xl border border-[#EBE7DD]">
-                <Image src="/mapa-planadas.png" alt="Mapa de Planadas, Tolima" fill className="object-contain bg-white" />
-              </div>
-            </Reveal>
-          </div>
-        </section>
+
 
         {/* MARQUEE — Animated text strip */}
         <section className="bg-[#1a281d] py-5 overflow-hidden">
