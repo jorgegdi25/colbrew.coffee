@@ -4,10 +4,10 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, interest, email, phone, message } = body;
 
     // Validate inputs
-    if (!name || !email || !message) {
+    if (!name || !interest || !email || !message) {
       return NextResponse.json(
         { success: false, message: 'Faltan campos obligatorios.' },
         { status: 400 }
@@ -37,7 +37,9 @@ export async function POST(request: Request) {
           
           <div style="margin-top: 20px;">
             <p><strong>Nombre:</strong> ${name}</p>
+            <p><strong>Motivo:</strong> ${interest}</p>
             <p><strong>Correo Electrónico:</strong> <a href="mailto:${email}">${email}</a></p>
+            ${phone ? `<p><strong>Teléfono / WhatsApp:</strong> ${phone}</p>` : ''}
           </div>
           
           <div style="margin-top: 30px; background-color: #F8F7F2; padding: 15px; border-radius: 4px;">

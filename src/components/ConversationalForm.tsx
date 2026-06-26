@@ -6,7 +6,9 @@ import { ArrowRight, Check, Loader2 } from "lucide-react";
 export function ConversationalForm() {
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
+  const [interest, setInterest] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -24,8 +26,8 @@ export function ConversationalForm() {
       setError("Por favor dinos tu nombre.");
       return;
     }
-    if (step === 2 && (email.trim() === "" || !email.includes("@"))) {
-      setError("Por favor ingresa un correo electrónico válido.");
+    if (step === 2 && interest.trim() === "") {
+      setError("Por favor selecciona una opción.");
       return;
     }
     if (step === 3 && message.trim() === "") {
@@ -40,9 +42,9 @@ export function ConversationalForm() {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      if (step < 3) {
+      if (step < 4) {
         handleNext();
-      } else if (step === 3) {
+      } else if (step === 4) {
         handleSubmit(e);
       }
     }
@@ -51,8 +53,8 @@ export function ConversationalForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (message.trim() === "") {
-      setError("Por favor escribe tu mensaje.");
+    if (email.trim() === "" || !email.includes("@")) {
+      setError("Por favor ingresa un correo electrónico válido.");
       return;
     }
 
@@ -68,15 +70,17 @@ export function ConversationalForm() {
         },
         body: JSON.stringify({
           name: name,
-          email: email,
+          interest: interest,
           message: message,
+          email: email,
+          phone: phone,
         }),
       });
 
       const result = await response.json();
       
       if (result.success) {
-        setStep(4);
+        setStep(5);
       } else {
         // En caso de que falle por falta de contraseña SMTP, mostramos el error
         setError(result.message || "Ocurrió un error. Verifica tu configuración de correo.");
@@ -91,7 +95,7 @@ export function ConversationalForm() {
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white p-8 md:p-12 lg:p-16 rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-[#EBE7DD]">
-      <form onSubmit={handleSubmit} className="flex flex-col relative min-h-[300px] justify-center">
+      <form onSubmit={handleSubmit} className="flex flex-col relative min-h-[500px] justify-center">
         
         {/* STEP 1: NAME */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 1 ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 -translate-y-10 pointer-events-none'}`}>
@@ -121,39 +125,43 @@ export function ConversationalForm() {
           {error && step === 1 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
         </div>
 
-        {/* STEP 2: EMAIL */}
+        {/* STEP 2: INTEREST */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 2 ? 'opacity-100 z-10 translate-y-0' : step > 2 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
-          <label htmlFor="email" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-8 leading-tight">
-            Mucho gusto, <span className="text-[#b4843b]">{name || 'amigo'}</span>. <br /> ¿A qué correo electrónico podemos responderte?
+          <label className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
+            ¿Qué te trae hoy a COLBREW™?
           </label>
-          <div className="flex flex-col md:flex-row items-end gap-4 relative">
-            <input
-              ref={step === 2 ? (inputRef as any) : null}
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="ejemplo@correo.com"
-              className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-4 text-xl md:text-2xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/30"
-              autoComplete="email"
-            />
-            <button 
-              type="button" 
-              onClick={handleNext}
-              className="w-full md:w-auto mt-4 md:mt-0 flex-shrink-0 bg-[#1a281d] hover:bg-[#b4843b] text-white px-8 py-4 rounded-full font-inter font-bold transition-colors flex items-center justify-center gap-2 group"
-            >
-              Siguiente <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+          <p className="text-lg text-[#4a4a4a] mb-8">Selecciona la opción que mejor describa tu interés.</p>
+          <div className="flex flex-col gap-3 relative">
+            {[
+              "☕ Quiero conocer nuestros cafés",
+              "🌱 Soy productor o asociación cafetera",
+              "🌍 Busco importar café",
+              "🤝 Me interesa una alianza",
+              "💬 Otro"
+            ].map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => {
+                  setInterest(option);
+                  setError("");
+                  setStep(3);
+                }}
+                className={`text-left px-6 py-4 rounded-xl border-2 transition-all duration-300 font-inter text-lg md:text-xl font-medium ${interest === option ? 'border-[#b4843b] bg-[#FDFBF7] text-[#1a281d]' : 'border-[#EBE7DD] bg-transparent text-[#4a4a4a] hover:border-[#1a281d] hover:text-[#1a281d]'}`}
+              >
+                {option}
+              </button>
+            ))}
           </div>
           {error && step === 2 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
         </div>
 
         {/* STEP 3: MESSAGE */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 3 ? 'opacity-100 z-10 translate-y-0' : step > 3 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
-          <label htmlFor="message" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-8 leading-tight">
-            Perfecto. <br /> ¿En qué podemos ayudarte hoy?
+          <label htmlFor="message" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
+            Cuéntanos un poco más
           </label>
+          <p className="text-lg text-[#4a4a4a] mb-8">Queremos conocer tu historia o la razón por la que nos escribes.</p>
           <div className="flex flex-col gap-6 relative">
             <textarea
               ref={step === 3 ? (inputRef as any) : null}
@@ -161,11 +169,55 @@ export function ConversationalForm() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Escribe tu mensaje aquí... (Presiona Enter para enviar)"
-              rows={3}
+              placeholder="Escribe tu mensaje aquí..."
+              rows={4}
               className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-4 text-xl md:text-2xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/30 resize-none"
             />
             <div className="flex justify-end">
+              <button 
+                type="button" 
+                onClick={handleNext}
+                className="w-full md:w-auto flex-shrink-0 bg-[#1a281d] hover:bg-[#b4843b] text-white px-8 py-4 rounded-full font-inter font-bold transition-colors flex items-center justify-center gap-2 group"
+              >
+                Siguiente <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+          {error && step === 3 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
+        </div>
+
+        {/* STEP 4: CONTACT INFO */}
+        <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 4 ? 'opacity-100 z-10 translate-y-0' : step > 4 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
+          <label className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
+            ¿Dónde podemos responderte?
+          </label>
+          <p className="text-lg text-[#4a4a4a] mb-8">Podemos comunicarnos contigo por el medio que prefieras.</p>
+          <div className="flex flex-col gap-6 relative">
+            <input
+              ref={step === 4 ? (inputRef as any) : null}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Correo electrónico (obligatorio)"
+              className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-3 text-lg md:text-xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/50"
+              autoComplete="email"
+            />
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Teléfono o WhatsApp (opcional)"
+              className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-3 text-lg md:text-xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/50"
+              autoComplete="tel"
+            />
+            
+            <p className="text-sm text-[#4a4a4a]/70 font-inter mt-2">
+              Tu información será utilizada únicamente para responder a tu consulta. No compartimos tus datos con terceros.
+            </p>
+
+            <div className="flex justify-end mt-4">
               <button 
                 type="button"
                 onClick={handleSubmit}
@@ -178,17 +230,17 @@ export function ConversationalForm() {
                   </>
                 ) : (
                   <>
-                    Enviar mensaje <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    Enviar conversación <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
               </button>
             </div>
           </div>
-          {error && step === 3 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
+          {error && step === 4 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
         </div>
 
-        {/* STEP 4: SUCCESS */}
-        <div className={`transition-all duration-700 absolute inset-0 flex flex-col items-center justify-center text-center ${step === 4 ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
+        {/* STEP 5: SUCCESS */}
+        <div className={`transition-all duration-700 absolute inset-0 flex flex-col items-center justify-center text-center ${step === 5 ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
           <div className="w-20 h-20 bg-[#FDFBF7] border-4 border-[#b4843b] rounded-full flex items-center justify-center mb-6">
             <Check size={40} className="text-[#b4843b]" strokeWidth={3} />
           </div>
@@ -203,7 +255,9 @@ export function ConversationalForm() {
             onClick={() => {
               setStep(1);
               setName("");
+              setInterest("");
               setEmail("");
+              setPhone("");
               setMessage("");
             }}
             className="mt-10 font-inter text-sm font-bold uppercase tracking-widest text-[#4a4a4a] hover:text-[#b4843b] transition-colors border-b-2 border-transparent hover:border-[#b4843b] pb-1"
@@ -215,9 +269,9 @@ export function ConversationalForm() {
       </form>
       
       {/* Progress indicators */}
-      {step < 4 && (
+      {step < 5 && (
         <div className="flex justify-center gap-2 mt-8 md:mt-12">
-          {[1, 2, 3].map((s) => (
+          {[1, 2, 3, 4].map((s) => (
             <div 
               key={s} 
               className={`h-1.5 rounded-full transition-all duration-500 ${s === step ? 'w-8 bg-[#b4843b]' : s < step ? 'w-4 bg-[#1a281d]' : 'w-4 bg-[#EBE7DD]'}`}
