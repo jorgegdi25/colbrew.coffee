@@ -52,7 +52,7 @@ export default function PlanadasPage() {
             {/* Right: Image — slightly wider to break symmetry */}
             <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-full">
               <div className="absolute inset-0">
-                <img src="/scenic-view-agricultural-field-against-sky.webp" alt="Paisaje cafetero de Planadas, Tolima" className="w-full h-full object-cover" />
+                <img src="/planadas.webp" alt="Paisaje cafetero de Planadas, Tolima" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function PlanadasPage() {
             
             <Reveal delay={0.2}>
               <div className="mt-12 md:mt-16 w-full max-w-2xl mx-auto rounded-lg overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border-4 border-white bg-white">
-                <img src="/brand-4.webp" alt="Cultivo de café" className="w-full h-auto object-cover" />
+                <img src="/planadas1.webp" alt="Cultivo de café" className="w-full h-auto object-cover" />
               </div>
             </Reveal>
           </div>
@@ -93,7 +93,7 @@ export default function PlanadasPage() {
         {/* FULL WIDTH IMAGE BREAK */}
         <section className="w-full h-[40vh] md:h-[50vh] relative">
           <div className="absolute inset-0">
-             <img src="/hands-holding-coffee-beans.webp" alt="Manos sosteniendo café" className="w-full h-full object-cover" />
+             <img src="/planadas2.webp" alt="Manos sosteniendo café" className="w-full h-full object-cover" />
           </div>
         </section>
 
@@ -105,7 +105,7 @@ export default function PlanadasPage() {
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
                   <div className="absolute inset-0">
-                    <img src="/adult-woman-picking-coffee-from-plantations.webp" alt="Caficultora" className="w-full h-full object-cover" />
+                    <img src="/planadas-3.webp" alt="Caficultora" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function PlanadasPage() {
               <div className="w-full md:w-[55%] order-2 md:order-1">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
                   <div className="absolute inset-0">
-                    <img src="/latin-american-peruvian-man-working-with-coffee-with-jungle-forest-background.webp" alt="Caficultor" className="w-full h-full object-cover" />
+                    <img src="/planadas-4.webp" alt="Caficultor" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function PlanadasPage() {
               <div className="w-full md:w-[55%]">
                 <div className="relative w-full h-[400px] md:h-full min-h-[500px] rounded-sm overflow-hidden">
                   <div className="absolute inset-0">
-                    <img src="/raw-red-green-coffee-cherries-tree-branch-coffee-plantation-mountains-colombia.webp" alt="Naturaleza de Planadas" className="w-full h-full object-cover" />
+                    <img src="/planadas-5.webp" alt="Naturaleza de Planadas" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function PlanadasPage() {
         {/* SECCIÓN 4: Cultura que inspira — Parallax banner */}
         <section 
           className="relative py-20 md:py-28 flex items-center justify-center bg-fixed bg-center bg-cover" 
-          style={{ backgroundImage: "url('/brand-5.webp')" }}
+          style={{ backgroundImage: "url('/planadas-6.webp')" }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-12 text-center">

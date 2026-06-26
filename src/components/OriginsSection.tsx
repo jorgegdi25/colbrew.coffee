@@ -48,7 +48,7 @@ const origins = [
     ]
   },
   {
-    image: "/scenic-view-agricultural-field-against-sky.webp",
+    image: "/planadas.webp",
     location: "Planadas, Tolima",
     badgePosition: "bottom-left",
     title: "Planadas, Tolima",
