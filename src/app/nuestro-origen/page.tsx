@@ -69,6 +69,50 @@ export default function NuestroOrigenPage() {
           </div>
         </section>
 
+        {/* SECCIÓN 2.5: ¿Por qué la música? */}
+        <section className="bg-[#FDFBF7] py-24">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              <div className="w-full lg:w-1/2 order-1 lg:order-1 flex flex-col justify-center">
+                <Reveal delay={0.2}>
+                  <div className="border-l-[3px] border-[#b4843b] pl-8 mb-8">
+                    <h2 className="font-montserrat text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4">
+                      ¿Por qué la música?
+                    </h2>
+                  </div>
+                  <div className="space-y-6 text-lg leading-relaxed text-[#4a4a4a]">
+                    <p>
+                      La gente suele preguntar por qué una plataforma de café apoyaría a escuelas de música. Para nosotros, la respuesta es profundamente personal.
+                    </p>
+                    <p>
+                      COLBREW™ se inspiró en dos legados familiares. Uno comenzó en las montañas cafeteras de Apía, Colombia, donde tres generaciones de nuestra familia han estado vinculadas a la producción de café.
+                    </p>
+                    <p>
+                      El otro se construyó a través de décadas de dedicación a la educación musical en la Colombia rural, donde las escuelas de música comunitarias han transformado las vidas de miles de jóvenes.
+                    </p>
+                    <p className="font-medium text-[#1a281d]">
+                      Creemos que el café y la música tienen algo hermoso en común. Ambos unen a las personas. Ambos preservan la cultura. Ambos crean oportunidades para las futuras generaciones.
+                    </p>
+                    <p>
+                      Nuestro sueño es simple: Que cada taza de café colombiano también pueda ayudar a cultivar talento, esperanza y oportunidad en las comunidades donde nació ese café.
+                    </p>
+                    <div className="mt-8 p-6 bg-[#F8F7F2] rounded-md border-l-4 border-[#b4843b]">
+                      <p className="font-montserrat text-xl font-bold text-[#b4843b] italic">
+                        "Cada taza cuenta una historia. Cada compra crea una oportunidad."
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              </div>
+              <div className="w-full lg:w-1/2 order-2 lg:order-2 h-[500px] lg:h-[600px]">
+                <Reveal className="relative w-full h-full">
+                  <Image src="/musica-2.webp" alt="Educación musical comunitaria" fill className="object-cover rounded-sm" />
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* SECCIÓN 3: Nuestros Valores */}
         <section className="py-24 bg-[#FDFBF7]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16 text-center">
