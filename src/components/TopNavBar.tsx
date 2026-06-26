@@ -7,6 +7,23 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Menu, X } from "lucide-react";
 
+const navItems = [
+  { label: "Inicio", href: "/" },
+  { label: "Nuestro Origen", href: "/nuestro-origen" },
+  { 
+    label: "Comunidad", 
+    href: "/comunidad",
+    subItems: [
+      { label: "Apía", href: "/apia" },
+      { label: "Ciudad Bolívar", href: "/ciudad-bolivar" },
+      { label: "Líbano", href: "/libano" },
+      { label: "Planadas", href: "/planadas" },
+    ]
+  },
+  { label: "Historias", href: "/historias" },
+  { label: "Contacto", href: "/contacto" },
+];
+
 export function TopNavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,14 +66,37 @@ export function TopNavBar() {
         {/* Desktop Navigation links & CTA */}
         <div className="hidden lg:flex items-center gap-8 xl:gap-12">
           <div className="flex items-center gap-8">
-            {[
-              { label: "Inicio", href: "/" },
-              { label: "Nuestro Origen", href: "/nuestro-origen" },
-              { label: "Cultura y Juventud", href: "/comunidad" },
-              { label: "Historias", href: "/historias" },
-              { label: "Contacto", href: "/contacto" },
-            ].map((item) => {
-              const isActive = pathname === item.href;
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.subItems && item.subItems.some(sub => pathname === sub.href));
+              
+              if (item.subItems) {
+                return (
+                  <div key={item.label} className="relative group">
+                    <Link
+                      href={item.href}
+                      className={`font-montserrat text-[14px] font-bold ${
+                        isActive ? "text-[#1a281d]" : "text-[#1a281d] hover:text-[#b4843b]"
+                      } transition-colors relative flex items-center gap-1`}
+                    >
+                      {item.label}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      {isActive && (
+                        <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-[#1a281d]" />
+                      )}
+                    </Link>
+                    <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 w-48 z-50">
+                      <div className="bg-[#1a281d] rounded-md shadow-xl py-2 flex flex-col">
+                        {item.subItems.map((subItem) => (
+                          <Link key={subItem.href} href={subItem.href} className="px-4 py-2 font-inter text-sm text-white hover:bg-[#b4843b] hover:text-white transition-colors">
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.label}
@@ -94,24 +134,35 @@ export function TopNavBar() {
       {mobileMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-[#F8F7F2] border-t border-gray-200/50 shadow-lg py-6 px-6 flex flex-col gap-6 z-40">
           <div className="flex flex-col gap-4">
-            {[
-              { label: "Inicio", href: "/" },
-              { label: "Nuestro Origen", href: "/nuestro-origen" },
-              { label: "Cultura y Juventud", href: "/comunidad" },
-              { label: "Historias", href: "/historias" },
-              { label: "Contacto", href: "/contacto" },
-            ].map((item) => {
-              const isActive = pathname === item.href;
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.subItems && item.subItems.some(sub => pathname === sub.href));
+              
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={`font-montserrat text-[16px] font-bold ${
-                    isActive ? "text-[#b4843b]" : "text-[#1a281d] hover:text-[#b4843b]"
-                  } transition-colors`}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label} className="flex flex-col">
+                  <Link
+                    href={item.href}
+                    className={`font-montserrat text-[16px] font-bold ${
+                      isActive && !item.subItems ? "text-[#b4843b]" : "text-[#1a281d] hover:text-[#b4843b]"
+                    } transition-colors`}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.subItems && (
+                    <div className="flex flex-col pl-4 mt-3 gap-3 border-l-2 border-gray-200 ml-2">
+                      {item.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className={`font-montserrat text-[14px] font-medium ${
+                            pathname === subItem.href ? "text-[#b4843b]" : "text-[#4a4a4a] hover:text-[#b4843b]"
+                          } transition-colors`}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
