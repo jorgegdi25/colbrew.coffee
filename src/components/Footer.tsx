@@ -21,7 +21,7 @@ export function Footer() {
               <li><Link href="/nuestro-origen" className="hover:text-[#b4843b] transition-colors">Nuestro Origen</Link></li>
               <li><Link href="/comunidad" className="hover:text-[#b4843b] transition-colors">Cultura y Juventud</Link></li>
               <li><Link href="/historias" className="hover:text-[#b4843b] transition-colors">Historias</Link></li>
-              <li><Link href="#contacto-footer" className="hover:text-[#b4843b] transition-colors">Contacto</Link></li>
+              <li><Link href="/contacto" className="hover:text-[#b4843b] transition-colors">Contacto</Link></li>
             </ul>
           </div>
 

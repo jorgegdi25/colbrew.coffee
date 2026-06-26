@@ -54,7 +54,7 @@ export function TopNavBar() {
               { label: "Nuestro Origen", href: "/nuestro-origen" },
               { label: "Cultura y Juventud", href: "/comunidad" },
               { label: "Historias", href: "/historias" },
-              { label: "Contacto", href: "#contacto-footer" },
+              { label: "Contacto", href: "/contacto" },
             ].map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -99,7 +99,7 @@ export function TopNavBar() {
               { label: "Nuestro Origen", href: "/nuestro-origen" },
               { label: "Cultura y Juventud", href: "/comunidad" },
               { label: "Historias", href: "/historias" },
-              { label: "Contacto", href: "#contacto-footer" },
+              { label: "Contacto", href: "/contacto" },
             ].map((item) => {
               const isActive = pathname === item.href;
               return (
