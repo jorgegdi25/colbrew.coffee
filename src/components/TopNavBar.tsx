@@ -22,7 +22,6 @@ const navItems = [
     ]
   },
   { label: "Historias", href: "/historias" },
-  { label: "Contacto", href: "/contacto" },
 ];
 
 export function TopNavBar() {
@@ -115,10 +114,12 @@ export function TopNavBar() {
             })}
           </div>
           
-          {/* Únete Button */}
-          <button className="bg-[#1a281d] text-white px-6 py-2.5 rounded-sm font-inter text-[14px] font-semibold hover:bg-[#2c3d31] transition-colors shadow-sm ml-4">
-            Únete
-          </button>
+          {/* Contacto Button */}
+          <Link href="/contacto">
+            <button className="bg-[#1a281d] text-white px-6 py-2.5 rounded-sm font-inter text-[14px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm ml-4">
+              Hablemos de Café
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -167,9 +168,11 @@ export function TopNavBar() {
               );
             })}
           </div>
-          <button className="bg-[#1a281d] text-white w-full py-3 rounded-sm font-inter text-[15px] font-semibold hover:bg-[#2c3d31] transition-colors shadow-sm">
-            Únete
-          </button>
+          <Link href="/contacto" className="w-full">
+            <button className="bg-[#1a281d] text-white w-full py-3 rounded-sm font-inter text-[15px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm">
+              Hablemos de Café
+            </button>
+          </Link>
         </div>
       )}
     </header>
