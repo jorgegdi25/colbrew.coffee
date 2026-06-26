@@ -2,6 +2,7 @@ import { TopNavBar } from "@/components/TopNavBar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { CtaSection } from "@/components/CtaSection";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -209,6 +210,26 @@ export default function LibanoPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN MAPA */}
+        <section className="py-24 bg-[#F8F7F2]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 flex flex-col items-center">
+            <Reveal>
+              <div className="text-center mb-12">
+                <h2 className="font-montserrat text-sm font-bold text-[#b4843b] uppercase tracking-wider mb-2">
+                  Ubicación
+                </h2>
+                <h3 className="font-montserrat text-3xl md:text-4xl font-bold text-[#1a281d] mb-4">
+                  El norte del Tolima
+                </h3>
+                <div className="w-16 h-[2px] bg-[#b4843b] mx-auto"></div>
+              </div>
+              <div className="relative w-full max-w-4xl h-[400px] md:h-[600px] rounded-lg overflow-hidden shadow-xl border border-[#EBE7DD]">
+                <Image src="/mapa-libano.png" alt="Mapa de Líbano, Tolima" fill className="object-contain bg-white" />
+              </div>
+            </Reveal>
           </div>
         </section>
 
