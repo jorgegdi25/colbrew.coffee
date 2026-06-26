@@ -46,6 +46,19 @@ const origins = [
       { icon: Music, label: "Cultura" },
       { icon: Sprout, label: "Comunidad" }
     ]
+  },
+  {
+    image: "/scenic-view-agricultural-field-against-sky.webp",
+    location: "Planadas, Tolima",
+    badgePosition: "bottom-left",
+    title: "Planadas, Tolima",
+    description: "Un territorio reconocido por su resiliencia y cafés de especialidad, donde la comunidad construye futuro a través del café.",
+    link: "/planadas",
+    notes: [
+      { icon: Coffee, label: "Café" },
+      { icon: Music, label: "Cultura" },
+      { icon: Sprout, label: "Comunidad" }
+    ]
   }
 ];
 
