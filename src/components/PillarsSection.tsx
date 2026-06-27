@@ -1,5 +1,6 @@
 "use client";
 import { Reveal } from "./Reveal";
+import { useTranslations } from "next-intl";
 
 const pillars = [
   {
@@ -41,12 +42,21 @@ const pillars = [
 ];
 
 export function PillarsSection() {
+  const t = useTranslations("Pillars");
+  const translatedPillars = t.raw("pillars") as { title: string, desc: string }[];
+
+  const pillarsData = pillars.map((pillar, idx) => ({
+    ...pillar,
+    title: translatedPillars[idx]?.title || pillar.title,
+    description: translatedPillars[idx]?.desc || pillar.description,
+  }));
+
   return (
     <section className="py-24 bg-[#F8F7F2] relative">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         <Reveal>
           <div className="flex flex-col md:flex-row justify-center items-center divide-y md:divide-y-0 md:divide-x divide-[#e2dcd0]">
-            {pillars.map((pillar) => (
+            {pillarsData.map((pillar) => (
               <div
                 key={pillar.title}
                 className="flex flex-col items-center text-center px-4 md:px-12 py-8 md:py-0 w-full md:w-1/3"

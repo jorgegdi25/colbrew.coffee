@@ -1,33 +1,37 @@
 "use client";
 
-import Link from "next/link";
+import { Link, usePathname } from "../../i18n/routing";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 
-const navItems = [
-  { label: "Inicio", href: "/" },
-  { label: "Nuestro Origen", href: "/nuestro-origen" },
-  { 
-    label: "Comunidad", 
-    href: "/comunidad",
-    subItems: [
-      { label: "Apía", href: "/apia" },
-      { label: "Ciudad Bolívar", href: "/ciudad-bolivar" },
-      { label: "Jardín", href: "/jardin" },
-      { label: "Líbano", href: "/libano" },
-      { label: "Planadas", href: "/planadas" },
-    ]
-  },
-  { label: "Historias", href: "/historias" },
-];
+// removed static navItems, will be created dynamically inside component
 
 export function TopNavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
+  const locale = useLocale();
+
+  const navItems = [
+    { label: t("inicio") || "Inicio", href: "/" },
+    { label: t("origen"), href: "/nuestro-origen" },
+    { 
+      label: t("comunidad"), 
+      href: "/comunidad",
+      subItems: [
+        { label: "Apía", href: "/apia" },
+        { label: "Ciudad Bolívar", href: "/ciudad-bolivar" },
+        { label: "Jardín", href: "/jardin" },
+        { label: "Líbano", href: "/libano" },
+        { label: "Planadas", href: "/planadas" },
+      ]
+    },
+    { label: t("historias"), href: "/historias" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +43,7 @@ export function TopNavBar() {
 
   // Close mobile menu on navigation
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setMobileMenuOpen(false);
   }, [pathname]);
 
@@ -114,12 +119,23 @@ export function TopNavBar() {
             })}
           </div>
           
-          {/* Contacto Button */}
-          <Link href="/contacto">
-            <button className="bg-[#1a281d] text-white px-6 py-2.5 rounded-sm font-inter text-[14px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm ml-4">
-              Hablemos de Café
-            </button>
-          </Link>
+          
+          {/* Contacto Button & Lang Switcher */}
+          <div className="flex items-center gap-3">
+            <Link href="/contacto">
+              <button className="bg-[#1a281d] text-white px-6 py-2.5 rounded-sm font-inter text-[14px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm ml-4">
+                {t("hablemos")}
+              </button>
+            </Link>
+            
+            {/* Lang Switcher */}
+            <Link href={pathname} locale={locale === 'es' ? 'en' : 'es'}>
+              <button className="flex items-center gap-1 text-[#1a281d] hover:text-[#b4843b] transition-colors font-inter text-sm font-bold">
+                <Globe size={18} />
+                {locale === 'es' ? 'EN' : 'ES'}
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}

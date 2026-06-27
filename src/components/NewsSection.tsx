@@ -1,7 +1,8 @@
 "use client";
 import { Reveal } from "./Reveal";
 import { urlForImage } from "@/sanity/lib/image";
-import Link from "next/link";
+import { Link } from "../i18n/routing";
+import { useTranslations } from "next-intl";
 import { Image as SanityImage } from "sanity";
 
 interface Article {
@@ -17,6 +18,8 @@ interface NewsSectionProps {
 }
 
 export function NewsSection({ articles }: NewsSectionProps) {
+  const t = useTranslations("News");
+  
   // Use static fallback if no articles are passed (or empty array)
   const displayArticles = articles && articles.length > 0 ? articles : [];
 
@@ -30,10 +33,10 @@ export function NewsSection({ articles }: NewsSectionProps) {
         <Reveal>
           <div className="flex justify-between items-end mb-10 border-b border-[#e2dcd0] pb-4">
             <h2 className="font-montserrat text-[28px] font-bold text-[#1a281d]">
-              Últimas historias
+              {t("title")}
             </h2>
             <Link href="/historias" className="font-inter text-[14px] font-semibold text-[#b4843b] hover:underline">
-              Ver todas las historias →
+              {t("viewAll")}
             </Link>
           </div>
         </Reveal>
@@ -43,7 +46,7 @@ export function NewsSection({ articles }: NewsSectionProps) {
             {displayArticles.map((article) => {
               const category = article.categories && article.categories.length > 0 
                 ? article.categories[0].title 
-                : "Historia";
+                : t("defaultCategory");
               const imageUrl = article.mainImage ? urlForImage(article.mainImage)?.url() : "/brand-1.webp";
               
               return (

@@ -104,7 +104,7 @@ export function ConversationalForm() {
           </label>
           <div className="flex flex-col md:flex-row items-end gap-4 relative">
             <input
-              ref={step === 1 ? (inputRef as any) : null}
+              ref={step === 1 ? (inputRef as React.RefObject<HTMLInputElement>) : null}
               type="text"
               id="name"
               value={name}
@@ -164,7 +164,7 @@ export function ConversationalForm() {
           <p className="text-lg text-[#4a4a4a] mb-8">Queremos conocer tu historia o la razón por la que nos escribes.</p>
           <div className="flex flex-col gap-6 relative">
             <textarea
-              ref={step === 3 ? (inputRef as any) : null}
+              ref={step === 3 ? (inputRef as React.RefObject<HTMLTextAreaElement>) : null}
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -194,7 +194,7 @@ export function ConversationalForm() {
           <p className="text-lg text-[#4a4a4a] mb-8">Podemos comunicarnos contigo por el medio que prefieras.</p>
           <div className="flex flex-col gap-6 relative">
             <input
-              ref={step === 4 ? (inputRef as any) : null}
+              ref={step === 4 ? (inputRef as React.RefObject<HTMLInputElement>) : null}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

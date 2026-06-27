@@ -5,7 +5,8 @@ import { ArrowRight, MapPin, Globe, Sprout, ChevronLeft, ChevronRight, Coffee, M
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 
-import Link from "next/link";
+import { Link } from "../i18n/routing";
+import { useTranslations } from "next-intl";
 
 const origins = [
   {
@@ -79,6 +80,19 @@ export function OriginsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const t = useTranslations("Origins");
+  const translatedOrigins = t.raw("origins") as { title: string, desc: string }[];
+  
+  const originsData = origins.map((origin, idx) => ({
+    ...origin,
+    title: translatedOrigins[idx]?.title || origin.title,
+    description: translatedOrigins[idx]?.desc || origin.description,
+    notes: [
+      { icon: Coffee, label: t("labels.cafe") },
+      { icon: Music, label: t("labels.cultura") },
+      { icon: Sprout, label: t("labels.comunidad") }
+    ]
+  }));
 
   const checkScrollability = () => {
     if (scrollContainerRef.current) {
@@ -126,13 +140,13 @@ export function OriginsSection() {
               <div className="w-12 h-[2px] bg-[#b4843b] mb-6"></div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-montserrat text-[40px] md:text-[56px] font-extrabold leading-[1.1] mb-6 text-[#1a281d] tracking-tight">
-                Orígenes que inspiran, <br className="hidden md:block" /> cafés que transforman.
+              <h2 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a281d] leading-tight mb-6 tracking-tight">
+                {t("title1")} <br className="hidden sm:block" /> <span className="text-[#b4843b]">{t("title2")}</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="font-inter text-[16px] md:text-[18px] text-[#4a4a4a] leading-relaxed">
-                Descubre los territorios donde nacen las historias que inspiran a COLBREW™. <br className="hidden md:block" /> Cada origen representa una comunidad, una cultura y una visión de futuro construida alrededor del café.
+              <p className="font-inter text-lg text-[#4a4a4a] leading-relaxed">
+                {t("desc")}
               </p>
             </Reveal>
           </div>
@@ -192,7 +206,7 @@ export function OriginsSection() {
             className="flex gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-8 pt-4 px-4 -mx-4 [&::-webkit-scrollbar]:hidden"
             style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
           >
-            {origins.map((origin, index) => (
+            {originsData.map((origin, index) => (
               <div 
                 key={origin.title} 
                 className="snap-start flex-none w-[85vw] sm:w-[400px] lg:w-[calc(33.333%-1.5rem)]"

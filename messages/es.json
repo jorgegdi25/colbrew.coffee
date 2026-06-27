@@ -1,0 +1,121 @@
+{
+  "Navigation": {
+    "inicio": "Inicio",
+    "origen": "Nuestro Origen",
+    "comunidad": "Comunidad",
+    "historias": "Historias",
+    "hablemos": "Hablemos de Café"
+  },
+  "Hero": {
+    "title1": "Más que café: territorio, música y ",
+    "title2": "futuro.",
+    "subtitle": "Conectamos cafés especiales colombianos con iniciativas culturales y educativas que generan oportunidades para nuevas generaciones en las regiones donde nace nuestro café.",
+    "cta1": "Conoce nuestra historia",
+    "cta2": "Explorar orígenes"
+  },
+  "Footer": {
+    "desc": "Conectando comunidades cafeteras colombianas con el mundo.",
+    "links": "Enlaces",
+    "follow": "Síguenos",
+    "contact": "Contáctanos",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cultura": "Cultura y Juventud"
+  },
+  "Cta": {
+    "title1": "Cada taza puede ",
+    "title2": " generar ",
+    "title3": "oportunidades",
+    "desc": "Detrás de cada origen existen comunidades, jóvenes, iniciativas culturales y familias cafeteras que construyen el futuro de sus territorios. COLBREW™ busca conectar esas historias con personas que creen en el poder transformador del café colombiano.",
+    "primary": "Explorar Orígenes",
+    "secondary": "Solicitar Información"
+  },
+  "Origins": {
+    "title1": "Cada Origen",
+    "title2": "Cuenta una Historia",
+    "desc": "Conoce los territorios donde nacen nuestros cafés especiales y las comunidades que los hacen posibles. Cada taza es una ventana a la cultura, la resiliencia y el sabor de Colombia.",
+    "explore": "Explorar Origen",
+    "labels": {
+      "cafe": "Café",
+      "cultura": "Cultura",
+      "comunidad": "Comunidad"
+    },
+    "origins": [
+      {
+        "title": "Apía, Risaralda",
+        "desc": "Territorio cafetero reconocido por su tradición, sus paisajes andinos y el trabajo de familias que han construido una profunda cultura alrededor del café."
+      },
+      {
+        "title": "Jardín, Antioquia",
+        "desc": "Un origen donde la tradición cafetera, el patrimonio cultural y la riqueza natural hacen parte de la identidad del territorio."
+      },
+      {
+        "title": "Ciudad Bolívar, Antioquia",
+        "desc": "Montañas, caficultura y comunidades que han encontrado en el café una oportunidad para preservar su identidad y construir futuro."
+      },
+      {
+        "title": "Planadas, Tolima",
+        "desc": "Un territorio reconocido por su resiliencia y cafés de especialidad, donde la comunidad construye futuro a través del café."
+      },
+      {
+        "title": "Líbano, Tolima",
+        "desc": "Un territorio donde la tradición cafetera ha unido generaciones y el legado agrícola fortalece el desarrollo de la comunidad."
+      }
+    ]
+  },
+  "Pillars": {
+    "pillars": [
+      {
+        "title": "Café con propósito",
+        "desc": "Promovemos cafés especiales colombianos que representan territorios, productores y comunidades."
+      },
+      {
+        "title": "Cultura y juventud",
+        "desc": "Apoyamos iniciativas culturales y escuelas de música que fortalecen nuevas generaciones."
+      },
+      {
+        "title": "Territorio e impacto",
+        "desc": "Cada origen conecta café, identidad local y oportunidades para el desarrollo regional."
+      }
+    ]
+  },
+  "News": {
+    "title": "Últimas historias",
+    "viewAll": "Ver todas las historias →",
+    "defaultCategory": "Historia"
+  },
+  "Storytelling": {
+    "title1": "No vendemos café.",
+    "title2": "Conectamos territorios.",
+    "subtitle": "Nuestro Paisaje",
+    "heading": "Respeto por la Tierra",
+    "desc": "Cada hectárea protegida es un legado para las futuras generaciones de caficultores en toda Colombia."
+  },
+  "Process": {
+    "title": "Del grano al impacto",
+    "subtitle": "Cómo funciona COLBREW™",
+    "steps": [
+      {
+        "label": "Café de origen",
+        "desc": "Seleccionamos cafés especiales con identidad territorial."
+      },
+      {
+        "label": "Productores y comunidades",
+        "desc": "Trabajamos junto a regiones cafeteras comprometidas con la calidad."
+      },
+      {
+        "label": "Cultura y juventud",
+        "desc": "Apoyamos iniciativas culturales que fortalecen oportunidades para nuevas generaciones."
+      },
+      {
+        "label": "Consumidores conscientes",
+        "desc": "Personas que valoran el origen y el impacto detrás de cada taza."
+      },
+      {
+        "label": "Futuro sostenible",
+        "desc": "Construimos conexiones que generan valor para los territorios."
+      }
+    ]
+  }
+}

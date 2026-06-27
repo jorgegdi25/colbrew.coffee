@@ -2,8 +2,9 @@
 
 import { Reveal } from "./Reveal";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "../../i18n/routing";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const heroImages = [
   "/brand-1.webp",
@@ -13,6 +14,7 @@ const heroImages = [
 
 export function HeroSection() {
   const [currentImg, setCurrentImg] = useState(0);
+  const t = useTranslations("Hero");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,13 +58,13 @@ export function HeroSection() {
           <Reveal delay={0.1}>
             <h1 className="font-montserrat text-[32px] sm:text-[36px] md:text-[50px] font-bold text-white md:text-[#1a281d] leading-[1.1] mb-6 md:mb-8 drop-shadow-md md:drop-shadow-none">
               <span className="sr-only">Café Especial Colombiano. </span>
-              Más que café: territorio, música y <span className="text-[#d4a860] md:text-[#b4843b] font-medium">futuro.</span>
+              {t("title1")}<span className="text-[#d4a860] md:text-[#b4843b] font-medium">{t("title2")}</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.2}>
             <p className="font-inter text-[16px] md:text-[18px] text-gray-100 md:text-[#4a4a4a] max-w-[420px] mb-8 md:mb-10 leading-relaxed font-medium drop-shadow-sm md:drop-shadow-none">
-              Conectamos cafés especiales colombianos con iniciativas culturales y educativas que generan oportunidades para nuevas generaciones en las regiones donde nace nuestro café.
+              {t("subtitle")}
             </p>
           </Reveal>
 
@@ -72,13 +74,13 @@ export function HeroSection() {
                 href="/nuestro-origen"
                 className="bg-[#b4843b] md:bg-[#1a281d] text-white px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] hover:bg-[#9a6f30] md:hover:bg-[#2c3d31] transition-colors shadow-lg md:shadow-sm w-full sm:w-auto text-center cursor-pointer"
               >
-                Conoce nuestra historia
+                {t("cta1")}
               </Link>
               <Link 
-                href="#origenes-section"
+                href="/#origenes-section"
                 className="bg-transparent text-white md:text-[#1a281d] px-8 py-3.5 rounded-sm font-inter font-semibold text-[15px] border border-white md:border-[#d1cdc2] hover:bg-white/10 md:hover:bg-transparent md:hover:border-[#1a281d] transition-colors w-full sm:w-auto text-center cursor-pointer"
               >
-                Explorar orígenes
+                {t("cta2")}
               </Link>
             </div>
           </Reveal>

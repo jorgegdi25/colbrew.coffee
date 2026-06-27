@@ -61,7 +61,7 @@ export async function POST(request: Request) {
       { success: true, message: 'Correo enviado exitosamente.' },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error al enviar correo:', error);
     return NextResponse.json(
       { success: false, message: 'Error interno del servidor. Revisa las credenciales SMTP.' },

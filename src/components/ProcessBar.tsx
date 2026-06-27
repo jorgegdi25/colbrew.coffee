@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Reveal } from "./Reveal";
+import { useTranslations } from "next-intl";
 
 const processSteps = [
   {
@@ -60,6 +61,15 @@ const processSteps = [
 ];
 
 export function ProcessBar() {
+  const t = useTranslations("Process");
+  const translatedSteps = t.raw("steps") as { label: string, desc: string }[];
+  
+  const processStepsData = processSteps.map((step, idx) => ({
+    ...step,
+    label: translatedSteps[idx]?.label || step.label,
+    description: translatedSteps[idx]?.desc || step.description,
+  }));
+
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background image & overlay */}
@@ -76,10 +86,10 @@ export function ProcessBar() {
         <Reveal>
           <div className="mb-16">
             <h2 className="font-montserrat text-[32px] md:text-[42px] font-bold text-white mb-2">
-              Del grano al impacto
+              {t("title")}
             </h2>
             <p className="font-inter text-[#d4a860] md:text-[#b4843b] font-medium text-[16px] md:text-[18px] mb-6">
-              Cómo funciona COLBREW™
+              {t("subtitle")}
             </p>
             <div className="w-[45px] h-[3px] bg-[#b4843b]" />
           </div>
@@ -87,7 +97,7 @@ export function ProcessBar() {
 
         <Reveal delay={0.2}>
           <div className="flex flex-wrap md:flex-nowrap items-start justify-between w-full">
-            {processSteps.map((step, i) => (
+            {processStepsData.map((step, i) => (
               <React.Fragment key={step.label}>
                 <div className="flex flex-col items-center text-center w-full md:w-auto">
                   <div className="mb-4 text-[#b4843b]">

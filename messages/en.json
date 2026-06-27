@@ -1,0 +1,121 @@
+{
+  "Navigation": {
+    "inicio": "Home",
+    "origen": "Our Origin",
+    "comunidad": "Community",
+    "historias": "Stories",
+    "hablemos": "Let's Talk Coffee"
+  },
+  "Hero": {
+    "title1": "More than coffee: territory, music, and ",
+    "title2": "future.",
+    "subtitle": "We connect Colombian specialty coffees with cultural and educational initiatives that create opportunities for new generations in the regions where our coffee is born.",
+    "cta1": "Discover our story",
+    "cta2": "Explore origins"
+  },
+  "Footer": {
+    "desc": "Connecting Colombian coffee communities with the world.",
+    "links": "Links",
+    "follow": "Follow Us",
+    "contact": "Contact Us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cultura": "Culture and Youth"
+  },
+  "Cta": {
+    "title1": "Every cup can ",
+    "title2": " create ",
+    "title3": "opportunities",
+    "desc": "Behind every origin there are communities, youth, cultural initiatives, and coffee families building the future of their territories. COLBREW™ seeks to connect those stories with people who believe in the transformative power of Colombian coffee.",
+    "primary": "Explore Origins",
+    "secondary": "Request Information"
+  },
+  "Origins": {
+    "title1": "Every Origin",
+    "title2": "Tells a Story",
+    "desc": "Discover the territories where our specialty coffees are born and the communities that make them possible. Every cup is a window to the culture, resilience, and flavor of Colombia.",
+    "explore": "Explore Origin",
+    "labels": {
+      "cafe": "Coffee",
+      "cultura": "Culture",
+      "comunidad": "Community"
+    },
+    "origins": [
+      {
+        "title": "Apía, Risaralda",
+        "desc": "Coffee territory known for its tradition, Andean landscapes, and the work of families who have built a deep culture around coffee."
+      },
+      {
+        "title": "Jardín, Antioquia",
+        "desc": "An origin where coffee tradition, cultural heritage, and natural wealth are part of the territory's identity."
+      },
+      {
+        "title": "Ciudad Bolívar, Antioquia",
+        "desc": "Mountains, coffee growing, and communities that have found in coffee an opportunity to preserve their identity and build a future."
+      },
+      {
+        "title": "Planadas, Tolima",
+        "desc": "A territory recognized for its resilience and specialty coffees, where the community builds a future through coffee."
+      },
+      {
+        "title": "Líbano, Tolima",
+        "desc": "A territory where coffee tradition has united generations and the agricultural legacy strengthens community development."
+      }
+    ]
+  },
+  "Pillars": {
+    "pillars": [
+      {
+        "title": "Coffee with purpose",
+        "desc": "We promote Colombian specialty coffees that represent territories, producers, and communities."
+      },
+      {
+        "title": "Culture and youth",
+        "desc": "We support cultural initiatives and music schools that strengthen new generations."
+      },
+      {
+        "title": "Territory and impact",
+        "desc": "Every origin connects coffee, local identity, and opportunities for regional development."
+      }
+    ]
+  },
+  "News": {
+    "title": "Latest Stories",
+    "viewAll": "View all stories →",
+    "defaultCategory": "Story"
+  },
+  "Storytelling": {
+    "title1": "We don't sell coffee.",
+    "title2": "We connect territories.",
+    "subtitle": "Our Landscape",
+    "heading": "Respect for the Earth",
+    "desc": "Every protected hectare is a legacy for future generations of coffee growers throughout Colombia."
+  },
+  "Process": {
+    "title": "From bean to impact",
+    "subtitle": "How COLBREW™ works",
+    "steps": [
+      {
+        "label": "Origin coffee",
+        "desc": "We select specialty coffees with territorial identity."
+      },
+      {
+        "label": "Producers and communities",
+        "desc": "We work together with coffee regions committed to quality."
+      },
+      {
+        "label": "Culture and youth",
+        "desc": "We support cultural initiatives that strengthen opportunities for new generations."
+      },
+      {
+        "label": "Conscious consumers",
+        "desc": "People who value the origin and impact behind every cup."
+      },
+      {
+        "label": "Sustainable future",
+        "desc": "We build connections that generate value for the territories."
+      }
+    ]
+  }
+}

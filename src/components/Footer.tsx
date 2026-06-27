@@ -1,7 +1,10 @@
 "use client";
-import Link from "next/link";
+import { Link } from "../i18n/routing";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+  const tn = useTranslations("Navigation");
   return (
     <footer id="contacto-footer" className="bg-[#1a281d] pt-20 pb-10 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 relative z-10">
@@ -10,23 +13,23 @@ export function Footer() {
           <div className="col-span-1">
             <img src="/colbrewb.png" alt="COLBREW™" className="h-10 mb-6" />
             <p className="font-inter text-[14px] text-white/70 max-w-[220px]">
-              Conectando comunidades cafeteras colombianas con el mundo.
+              {t("desc")}
             </p>
           </div>
 
           <div className="col-span-1">
-            <h4 className="font-montserrat text-white font-bold mb-6">Enlaces</h4>
+            <h4 className="font-montserrat text-white font-bold mb-6">{t("links")}</h4>
             <ul className="space-y-3 font-inter text-[14px] text-white/70">
-              <li><Link href="/" className="hover:text-[#b4843b] transition-colors">Inicio</Link></li>
-              <li><Link href="/nuestro-origen" className="hover:text-[#b4843b] transition-colors">Nuestro Origen</Link></li>
-              <li><Link href="/comunidad" className="hover:text-[#b4843b] transition-colors">Cultura y Juventud</Link></li>
-              <li><Link href="/historias" className="hover:text-[#b4843b] transition-colors">Historias</Link></li>
+              <li><Link href="/" className="hover:text-[#b4843b] transition-colors">{tn("inicio") || "Inicio"}</Link></li>
+              <li><Link href="/nuestro-origen" className="hover:text-[#b4843b] transition-colors">{tn("origen")}</Link></li>
+              <li><Link href="/comunidad" className="hover:text-[#b4843b] transition-colors">{t("cultura")}</Link></li>
+              <li><Link href="/historias" className="hover:text-[#b4843b] transition-colors">{tn("historias")}</Link></li>
               <li><Link href="/contacto" className="hover:text-[#b4843b] transition-colors">Contacto</Link></li>
             </ul>
           </div>
 
           <div className="col-span-1">
-            <h4 className="font-montserrat text-white font-bold mb-6">Síguenos</h4>
+            <h4 className="font-montserrat text-white font-bold mb-6">{t("follow")}</h4>
             <div className="flex gap-3">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-[#b4843b] flex items-center justify-center text-[#1a281d] hover:bg-white transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -38,7 +41,7 @@ export function Footer() {
           </div>
 
           <div className="col-span-1">
-            <h4 className="font-montserrat text-white font-bold mb-6">Contáctanos</h4>
+            <h4 className="font-montserrat text-white font-bold mb-6">{t("contact")}</h4>
             <ul className="space-y-4 font-inter text-[14px] text-white/70">
               <li className="flex items-center gap-3">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b4843b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -60,12 +63,12 @@ export function Footer() {
         {/* Bottom divider & Copyright */}
         <div className="border-t border-white/10 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-inter text-[13px] text-white/50">
-            © {new Date().getFullYear()} COLBREW™. Todos los derechos reservados.
+            © {new Date().getFullYear()} COLBREW™. {t("rights")}
           </p>
           <div className="font-inter text-[13px] text-white/50 flex gap-4">
-            <Link href="#" className="hover:text-[#b4843b] transition-colors">Política de Privacidad</Link>
+            <Link href="#" className="hover:text-[#b4843b] transition-colors">{t("privacy")}</Link>
             <span className="text-white/20">|</span>
-            <Link href="#" className="hover:text-[#b4843b] transition-colors">Términos de Servicio</Link>
+            <Link href="#" className="hover:text-[#b4843b] transition-colors">{t("terms")}</Link>
           </div>
         </div>
 
