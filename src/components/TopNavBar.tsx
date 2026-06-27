@@ -1,6 +1,6 @@
 "use client";
 
-import { Link, usePathname } from "../../i18n/routing";
+import { Link, usePathname } from "../i18n/routing";
 import { useEffect, useState } from "react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
