@@ -184,11 +184,21 @@ export function TopNavBar() {
               );
             })}
           </div>
-          <Link href="/contacto" className="w-full">
-            <button className="bg-[#1a281d] text-white w-full py-3 rounded-sm font-inter text-[15px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm">
-              Hablemos de Café
-            </button>
-          </Link>
+          <div className="flex flex-col gap-4 mt-2 border-t border-gray-200/50 pt-6">
+            {/* Mobile Lang Switcher */}
+            <Link href={pathname} locale={locale === 'es' ? 'en' : 'es'}>
+              <button className="flex items-center justify-center gap-2 w-full py-3 border-2 border-[#1a281d] text-[#1a281d] rounded-sm font-inter text-[15px] font-bold hover:bg-gray-50 transition-colors">
+                <Globe size={18} />
+                {locale === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+              </button>
+            </Link>
+
+            <Link href="/contacto" className="w-full">
+              <button className="bg-[#1a281d] text-white w-full py-3 rounded-sm font-inter text-[15px] font-semibold hover:bg-[#b4843b] transition-colors shadow-sm">
+                {t("hablemos")}
+              </button>
+            </Link>
+          </div>
         </div>
       )}
     </header>
