@@ -48,7 +48,7 @@ export async function POST(request: Request) {
           </div>
           
           <div style="margin-top: 40px; font-size: 12px; color: #888; text-align: center;">
-            <p>Este correo fue enviado desde el formulario de contacto en colbrew.coffee</p>
+            <p>Este correo fue enviado desde el formulario de contacto en colbrew.com.co</p>
           </div>
         </div>
       `,
