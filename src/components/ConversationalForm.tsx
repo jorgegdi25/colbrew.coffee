@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ConversationalForm() {
   const [step, setStep] = useState(1);
@@ -12,6 +13,7 @@ export function ConversationalForm() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const t = useTranslations("Form");
 
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
@@ -23,15 +25,15 @@ export function ConversationalForm() {
 
   const handleNext = () => {
     if (step === 1 && name.trim() === "") {
-      setError("Por favor dinos tu nombre.");
+      setError(t("err_name"));
       return;
     }
     if (step === 2 && interest.trim() === "") {
-      setError("Por favor selecciona una opción.");
+      setError(t("err_opt"));
       return;
     }
     if (step === 3 && message.trim() === "") {
-      setError("Por favor escribe tu mensaje.");
+      setError(t("err_msg"));
       return;
     }
     
@@ -54,7 +56,7 @@ export function ConversationalForm() {
     e.preventDefault();
     
     if (email.trim() === "" || !email.includes("@")) {
-      setError("Por favor ingresa un correo electrónico válido.");
+      setError(t("err_email"));
       return;
     }
 
@@ -83,11 +85,11 @@ export function ConversationalForm() {
         setStep(5);
       } else {
         // En caso de que falle por falta de contraseña SMTP, mostramos el error
-        setError(result.message || "Ocurrió un error. Verifica tu configuración de correo.");
+        setError(result.message || t("err_server"));
       }
     } catch (err) {
       console.error(err);
-      setError("Ocurrió un error interno. Intenta de nuevo.");
+      setError(t("err_internal"));
     } finally {
       setIsSubmitting(false);
     }
@@ -99,8 +101,7 @@ export function ConversationalForm() {
         
         {/* STEP 1: NAME */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 1 ? 'opacity-100 z-10 translate-y-0' : 'opacity-0 z-0 -translate-y-10 pointer-events-none'}`}>
-          <label htmlFor="name" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-8 leading-tight">
-            ¡Hola! <br /> ¿Cuál es tu nombre?
+          <label htmlFor="name" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-8 leading-tight" dangerouslySetInnerHTML={{ __html: t("step1_title_html") }}>
           </label>
           <div className="flex flex-col md:flex-row items-end gap-4 relative">
             <input
@@ -110,7 +111,7 @@ export function ConversationalForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Escribe tu nombre aquí..."
+              placeholder={t("step1_placeholder")}
               className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-4 text-xl md:text-2xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/30"
               autoComplete="name"
             />
@@ -119,7 +120,7 @@ export function ConversationalForm() {
               onClick={handleNext}
               className="w-full md:w-auto mt-4 md:mt-0 flex-shrink-0 bg-[#1a281d] hover:bg-[#b4843b] text-white px-8 py-4 rounded-full font-inter font-bold transition-colors flex items-center justify-center gap-2 group"
             >
-              Siguiente <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              {t("next_btn")} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
           {error && step === 1 && <p className="text-red-500 mt-4 text-sm font-medium animate-pulse">{error}</p>}
@@ -128,16 +129,16 @@ export function ConversationalForm() {
         {/* STEP 2: INTEREST */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 2 ? 'opacity-100 z-10 translate-y-0' : step > 2 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
           <label className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
-            ¿Qué te trae hoy a COLBREW™?
+            {t("step2_title")}
           </label>
-          <p className="text-lg text-[#4a4a4a] mb-8">Selecciona la opción que mejor describa tu interés.</p>
+          <p className="text-lg text-[#4a4a4a] mb-8">{t("step2_desc")}</p>
           <div className="flex flex-col gap-3 relative">
             {[
-              "☕ Quiero conocer nuestros cafés",
-              "🌱 Soy productor o asociación cafetera",
-              "🌍 Busco importar café",
-              "🤝 Me interesa una alianza",
-              "💬 Otro"
+              t("opt1"),
+              t("opt2"),
+              t("opt3"),
+              t("opt4"),
+              t("opt5")
             ].map((option) => (
               <button
                 key={option}
@@ -159,9 +160,9 @@ export function ConversationalForm() {
         {/* STEP 3: MESSAGE */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 3 ? 'opacity-100 z-10 translate-y-0' : step > 3 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
           <label htmlFor="message" className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
-            Cuéntanos un poco más
+            {t("step3_title")}
           </label>
-          <p className="text-lg text-[#4a4a4a] mb-8">Queremos conocer tu historia o la razón por la que nos escribes.</p>
+          <p className="text-lg text-[#4a4a4a] mb-8">{t("step3_desc")}</p>
           <div className="flex flex-col gap-6 relative">
             <textarea
               ref={step === 3 ? (inputRef as React.RefObject<HTMLTextAreaElement>) : null}
@@ -169,7 +170,7 @@ export function ConversationalForm() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Escribe tu mensaje aquí..."
+              placeholder={t("step3_placeholder")}
               rows={4}
               className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-4 text-xl md:text-2xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/30 resize-none"
             />
@@ -179,7 +180,7 @@ export function ConversationalForm() {
                 onClick={handleNext}
                 className="w-full md:w-auto flex-shrink-0 bg-[#1a281d] hover:bg-[#b4843b] text-white px-8 py-4 rounded-full font-inter font-bold transition-colors flex items-center justify-center gap-2 group"
               >
-                Siguiente <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                {t("next_btn")} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
@@ -189,9 +190,9 @@ export function ConversationalForm() {
         {/* STEP 4: CONTACT INFO */}
         <div className={`transition-all duration-700 absolute inset-0 flex flex-col justify-center ${step === 4 ? 'opacity-100 z-10 translate-y-0' : step > 4 ? 'opacity-0 z-0 -translate-y-10 pointer-events-none' : 'opacity-0 z-0 translate-y-10 pointer-events-none'}`}>
           <label className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4 leading-tight">
-            ¿Dónde podemos responderte?
+            {t("step4_title")}
           </label>
-          <p className="text-lg text-[#4a4a4a] mb-8">Podemos comunicarnos contigo por el medio que prefieras.</p>
+          <p className="text-lg text-[#4a4a4a] mb-8">{t("step4_desc")}</p>
           <div className="flex flex-col gap-6 relative">
             <input
               ref={step === 4 ? (inputRef as React.RefObject<HTMLInputElement>) : null}
@@ -199,7 +200,7 @@ export function ConversationalForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Correo electrónico (obligatorio)"
+              placeholder={t("email_placeholder")}
               className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-3 text-lg md:text-xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/50"
               autoComplete="email"
             />
@@ -208,13 +209,13 @@ export function ConversationalForm() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Teléfono o WhatsApp (opcional)"
+              placeholder={t("phone_placeholder")}
               className="w-full bg-transparent border-b-2 border-[#EBE7DD] focus:border-[#b4843b] py-3 text-lg md:text-xl text-[#1a281d] outline-none transition-colors placeholder:text-[#4a4a4a]/50"
               autoComplete="tel"
             />
             
             <p className="text-sm text-[#4a4a4a]/70 font-inter mt-2">
-              Tu información será utilizada únicamente para responder a tu consulta. No compartimos tus datos con terceros.
+              {t("privacy_note")}
             </p>
 
             <div className="flex justify-end mt-4">
@@ -226,11 +227,11 @@ export function ConversationalForm() {
               >
                 {isSubmitting ? (
                   <>
-                    Enviando... <Loader2 size={20} className="animate-spin" />
+                    {t("submitting_btn")} <Loader2 size={20} className="animate-spin" />
                   </>
                 ) : (
                   <>
-                    Enviar conversación <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    {t("submit_btn")} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
               </button>
@@ -245,10 +246,10 @@ export function ConversationalForm() {
             <Check size={40} className="text-[#b4843b]" strokeWidth={3} />
           </div>
           <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a281d] mb-4">
-            ¡Mensaje enviado!
+            {t("success_title")}
           </h2>
           <p className="font-inter text-lg text-[#4a4a4a] leading-relaxed max-w-lg">
-            Gracias por escribirnos, {name}. Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto a <span className="font-semibold text-[#1a281d]">{email}</span>.
+            {t("success_desc1")}{name}{t("success_desc2")}<span className="font-semibold text-[#1a281d]">{email}</span>.
           </p>
           <button 
             type="button"
@@ -262,7 +263,7 @@ export function ConversationalForm() {
             }}
             className="mt-10 font-inter text-sm font-bold uppercase tracking-widest text-[#4a4a4a] hover:text-[#b4843b] transition-colors border-b-2 border-transparent hover:border-[#b4843b] pb-1"
           >
-            Enviar otro mensaje
+            {t("send_another")}
           </button>
         </div>
 

@@ -117,5 +117,37 @@
         "desc": "Construimos conexiones que generan valor para los territorios."
       }
     ]
+  },
+  "Form": {
+    "step1_title_html": "¡Hola! <br /> ¿Cuál es tu nombre?",
+    "step1_placeholder": "Escribe tu nombre aquí...",
+    "next_btn": "Siguiente",
+    "err_name": "Por favor dinos tu nombre.",
+    "step2_title": "¿Qué te trae hoy a COLBREW™?",
+    "step2_desc": "Selecciona la opción que mejor describa tu interés.",
+    "opt1": "☕ Quiero conocer nuestros cafés",
+    "opt2": "🌱 Soy productor o asociación cafetera",
+    "opt3": "🌍 Busco importar café",
+    "opt4": "🤝 Me interesa una alianza",
+    "opt5": "💬 Otro",
+    "err_opt": "Por favor selecciona una opción.",
+    "step3_title": "Cuéntanos un poco más",
+    "step3_desc": "Queremos conocer tu historia o la razón por la que nos escribes.",
+    "step3_placeholder": "Escribe tu mensaje aquí...",
+    "err_msg": "Por favor escribe tu mensaje.",
+    "step4_title": "¿Dónde podemos responderte?",
+    "step4_desc": "Podemos comunicarnos contigo por el medio que prefieras.",
+    "email_placeholder": "Correo electrónico (obligatorio)",
+    "phone_placeholder": "Teléfono o WhatsApp (opcional)",
+    "privacy_note": "Tu información será utilizada únicamente para responder a tu consulta. No compartimos tus datos con terceros.",
+    "submit_btn": "Enviar conversación",
+    "submitting_btn": "Enviando...",
+    "err_email": "Por favor ingresa un correo electrónico válido.",
+    "success_title": "¡Mensaje enviado!",
+    "success_desc1": "Gracias por escribirnos, ",
+    "success_desc2": ". Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto a ",
+    "send_another": "Enviar otro mensaje",
+    "err_server": "Ocurrió un error. Verifica tu configuración de correo.",
+    "err_internal": "Ocurrió un error interno. Intenta de nuevo."
   }
 }
