@@ -24,7 +24,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[100svh] md:min-h-[850px] overflow-hidden bg-[#F8F7F2] flex items-center justify-center md:justify-start pt-[80px] md:pt-0">
+    <section className="relative w-full min-h-[100svh] md:min-h-[650px] overflow-hidden bg-[#F8F7F2] flex items-center justify-center md:justify-start pt-[80px] md:pt-0">
       
       {/* Background Image: Full screen on Mobile, Right side curve on Desktop */}
       <div 
